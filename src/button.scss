@@ -1,8 +1,9 @@
 @charset "UTF-8";
-@import "common/var";
-@import "mixins/button";
-@import "mixins/mixins";
-@import "mixins/utils";
+@import 'common/var';
+@import 'mixins/button';
+@import 'mixins/mixins';
+@import 'mixins/utils';
+@import 'mixins/function';
 
 @include b(button) {
   display: inline-block;
@@ -18,14 +19,19 @@
   box-sizing: border-box;
   outline: none;
   margin: 0;
-  transition: .1s;
+  transition: 0.1s;
   font-weight: $--button-font-weight;
   @include utils-user-select(none);
   & + & {
     margin-left: 10px;
   }
 
-  @include button-size($--button-padding-vertical, $--button-padding-horizontal, $--button-font-size, $--button-border-radius);
+  @include button-size(
+    $--button-padding-vertical,
+    $--button-padding-horizontal,
+    $--button-font-size,
+    $--button-border-radius
+  );
 
   &:hover,
   &:focus {
@@ -35,8 +41,18 @@
   }
 
   &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: saturation(
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
+      -$--button-active-shade-percent-css-variable
+    );
+    border-color: saturation(
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
+      -$--button-active-shade-percent-css-variable
+    );
     outline: none;
   }
 
@@ -44,7 +60,7 @@
     border: 0;
   }
 
-  & [class*="el-icon-"] {
+  & [class*='el-icon-'] {
     & + span {
       margin-left: 5px;
     }
@@ -60,15 +76,35 @@
 
     &:active {
       background: $--color-white;
-      border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      border-color: saturation(
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
+        -$--button-active-shade-percent-css-variable
+      );
+      color: saturation(
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
+        -$--button-active-shade-percent-css-variable
+      );
       outline: none;
     }
   }
 
   @include when(active) {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
-    border-color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: saturation(
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
+      -$--button-active-shade-percent-css-variable
+    );
+    border-color: saturation(
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
+      -$--button-active-shade-percent-css-variable
+    );
   }
 
   @include when(disabled) {
@@ -110,7 +146,7 @@
       right: -1px;
       bottom: -1px;
       border-radius: inherit;
-      background-color: rgba(255,255,255,.35);
+      background-color: rgba(255, 255, 255, 0.35);
     }
   }
   @include when(round) {
@@ -122,34 +158,84 @@
     padding: $--button-padding-vertical;
   }
   @include m(primary) {
-    @include button-variant($--button-primary-font-color, $--button-primary-background-color, $--button-primary-border-color);
+    @include button-variant(
+      $--button-primary-font-color,
+      $--button-primary-background-color,
+      $--button-primary-border-color,
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l
+    );
   }
   @include m(success) {
-    @include button-variant($--button-success-font-color, $--button-success-background-color, $--button-success-border-color);
+    @include button-variant(
+      $--button-success-font-color,
+      $--button-success-background-color,
+      $--button-success-border-color,
+      --color-success-h,
+      --color-success-s,
+      --color-success-l
+    );
   }
   @include m(warning) {
-    @include button-variant($--button-warning-font-color, $--button-warning-background-color, $--button-warning-border-color);
+    @include button-variant(
+      $--button-warning-font-color,
+      $--button-warning-background-color,
+      $--button-warning-border-color,
+      --color-warning-h,
+      --color-warning-s,
+      --color-warning-l
+    );
   }
   @include m(danger) {
-    @include button-variant($--button-danger-font-color, $--button-danger-background-color, $--button-danger-border-color);
+    @include button-variant(
+      $--button-danger-font-color,
+      $--button-danger-background-color,
+      $--button-danger-border-color,
+      --color-danger-h,
+      --color-danger-s,
+      --color-danger-l
+    );
   }
   @include m(info) {
-    @include button-variant($--button-info-font-color, $--button-info-background-color, $--button-info-border-color);
+    @include button-variant(
+      $--button-info-font-color,
+      $--button-info-background-color,
+      $--button-info-border-color,
+      --color-info-h,
+      --color-info-s,
+      --color-info-l
+    );
   }
   @include m(medium) {
-    @include button-size($--button-medium-padding-vertical, $--button-medium-padding-horizontal, $--button-medium-font-size, $--button-medium-border-radius);
+    @include button-size(
+      $--button-medium-padding-vertical,
+      $--button-medium-padding-horizontal,
+      $--button-medium-font-size,
+      $--button-medium-border-radius
+    );
     @include when(circle) {
       padding: $--button-medium-padding-vertical;
     }
   }
   @include m(small) {
-    @include button-size($--button-small-padding-vertical, $--button-small-padding-horizontal, $--button-small-font-size, $--button-small-border-radius);
+    @include button-size(
+      $--button-small-padding-vertical,
+      $--button-small-padding-horizontal,
+      $--button-small-font-size,
+      $--button-small-border-radius
+    );
     @include when(circle) {
       padding: $--button-small-padding-vertical;
     }
   }
   @include m(mini) {
-    @include button-size($--button-mini-padding-vertical, $--button-mini-padding-horizontal, $--button-mini-font-size, $--button-mini-border-radius);
+    @include button-size(
+      $--button-mini-padding-vertical,
+      $--button-mini-padding-horizontal,
+      $--button-mini-font-size,
+      $--button-mini-border-radius
+    );
     @include when(circle) {
       padding: $--button-mini-padding-vertical;
     }
@@ -163,12 +249,22 @@
 
     &:hover,
     &:focus {
-      color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+      color: lightness(
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
+        $--button-hover-tint-percent-css-variable
+      );
       border-color: transparent;
       background-color: transparent;
     }
     &:active {
-      color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+      color: saturation(
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
+        -$--button-active-shade-percent-css-variable
+      );
       border-color: transparent;
       background-color: transparent;
     }
@@ -234,7 +330,7 @@
       z-index: 1;
     }
   }
-  
+
   & > .el-dropdown {
     & > .el-button {
       border-top-left-radius: 0;

@@ -62,13 +62,13 @@ $typeMap: (
     &.el-link--#{$type} {
       color: $primaryColor;
       &:hover {
-        color: mix($primaryColor, $--color-white, 80%)
+        color: $--color-primary-light-3
       }
       &:after {
         border-color: $primaryColor
       }
       @include when(disabled) {
-        color: mix($primaryColor, $--color-white, 50%)
+        color: $--color-primary-light-6
       }
       @include when(underline) {
         &:hover:after {

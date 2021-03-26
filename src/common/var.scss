@@ -1,4 +1,62 @@
+@import "../mixins/function.scss";
 /* Element Chalk Variables */
+:root {
+  --color-primary-h: 210;
+  --color-primary-s: 100%;
+  --color-primary-l: 63%;
+
+  --color-success-h: 100;
+  --color-success-s: 54%;
+  --color-success-l: 49%;
+
+  --color-warning-h: 36;
+  --color-warning-s: 77%;
+  --color-warning-l: 57%;
+
+  --color-danger-h: 0;
+  --color-danger-s: 87%;
+  --color-danger-l: 69%;
+
+  --color-info-h: 220;
+  --color-info-s: 4%;
+  --color-info-l: 58%;
+
+  --color-text-primary-h: 220;
+  --color-text-primary-s: 3%;
+  --color-text-primary-l: 19%;
+
+  --color-text-regular-h: 220;
+  --color-text-regular-s: 3%;
+  --color-text-regular-l: 39%;
+
+  --color-text-secondary-h: 220;
+  --color-text-secondary-s: 4%;
+  --color-text-secondary-l: 58%;
+
+  --color-text-placeholder-h: 220;
+  --color-text-placeholder-s: 11%;
+  --color-text-placeholder-l: 78%;
+
+  --border-color-base-h: 222;
+  --border-color-base-s: 17%;
+  --border-color-base-l: 88%;
+
+  --border-color-light-h: 220;
+  --border-color-light-s: 20%;
+  --border-color-light-l: 91%;
+
+  --border-color-lighter-h: 222;
+  --border-color-lighter-s: 33%;
+  --border-color-lighter-l: 94%;
+
+  --border-color-extra-light-h: 216;
+  --border-color-extra-light-s: 63%;
+  --border-color-extra-light-l: 97%;
+
+  --background-color-base-h: 216;
+  --background-color-base-s: 33%;
+  --background-color-base-l: 97%;
+}
 
 // Special comment for theme configurator
 // type|skipAutoTranslation|Category|Order
@@ -16,58 +74,103 @@ $--color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$--color-primary: #409EFF !default;
+// $--color-primary: hsl(210, 100%, 63%) !default;
+$--color-primary: hsl(var(#{--color-primary-h}), var(#{--color-primary-s}), var(#{--color-primary-l})) !default;
 /// color|1|Background Color|4
 $--color-white: #FFFFFF !default;
 /// color|1|Background Color|4
 $--color-black: #000000 !default;
-$--color-primary-light-1: mix($--color-white, $--color-primary, 10%) !default; /* 53a8ff */
-$--color-primary-light-2: mix($--color-white, $--color-primary, 20%) !default; /* 66b1ff */
-$--color-primary-light-3: mix($--color-white, $--color-primary, 30%) !default; /* 79bbff */
-$--color-primary-light-4: mix($--color-white, $--color-primary, 40%) !default; /* 8cc5ff */
-$--color-primary-light-5: mix($--color-white, $--color-primary, 50%) !default; /* a0cfff */
-$--color-primary-light-6: mix($--color-white, $--color-primary, 60%) !default; /* b3d8ff */
-$--color-primary-light-7: mix($--color-white, $--color-primary, 70%) !default; /* c6e2ff */
-$--color-primary-light-8: mix($--color-white, $--color-primary, 80%) !default; /* d9ecff */
-$--color-primary-light-9: mix($--color-white, $--color-primary, 90%) !default; /* ecf5ff */
-/// color|1|Functional Color|1
-$--color-success: #67C23A !default;
-/// color|1|Functional Color|1
-$--color-warning: #E6A23C !default;
-/// color|1|Functional Color|1
-$--color-danger: #F56C6C !default;
-/// color|1|Functional Color|1
-$--color-info: #909399 !default;
 
-$--color-success-light: mix($--color-white, $--color-success, 80%) !default;
-$--color-warning-light: mix($--color-white, $--color-warning, 80%) !default;
-$--color-danger-light: mix($--color-white, $--color-danger, 80%) !default;
-$--color-info-light: mix($--color-white, $--color-info, 80%) !default;
+$--color-primary-light-1: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 4%) !default;
+$--color-primary-light-2: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 8%) !default;
+$--color-primary-light-3: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 12%) !default;
+$--color-primary-light-4: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 16%) !default;
+$--color-primary-light-5: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 20%) !default;
+$--color-primary-light-6: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 24%) !default;
+$--color-primary-light-7: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 28%) !default;
+$--color-primary-light-8: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 32%) !default;
+$--color-primary-light-9: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 36%) !default;
+/// color|1|Functional Color|1
+$--color-success: hsl(var(#{--color-success-h}), var(#{--color-success-s}), var(#{--color-success-l})) !default;
 
-$--color-success-lighter: mix($--color-white, $--color-success, 90%) !default;
-$--color-warning-lighter: mix($--color-white, $--color-warning, 90%) !default;
-$--color-danger-lighter: mix($--color-white, $--color-danger, 90%) !default;
-$--color-info-lighter: mix($--color-white, $--color-info, 90%) !default;
+$--color-success-light-1: lightness(--color-success-h, --color-success-s, --color-success-l, 4%) !default;
+$--color-success-light-2: lightness(--color-success-h, --color-success-s, --color-success-l, 8%) !default;
+$--color-success-light-3: lightness(--color-success-h, --color-success-s, --color-success-l, 12%) !default;
+$--color-success-light-4: lightness(--color-success-h, --color-success-s, --color-success-l, 16%) !default;
+$--color-success-light-5: lightness(--color-success-h, --color-success-s, --color-success-l, 20%) !default;
+$--color-success-light-6: lightness(--color-success-h, --color-success-s, --color-success-l, 24%) !default;
+$--color-success-light-7: lightness(--color-success-h, --color-success-s, --color-success-l, 28%) !default;
+$--color-success-light-8: lightness(--color-success-h, --color-success-s, --color-success-l, 32%) !default;
+$--color-success-light-9: lightness(--color-success-h, --color-success-s, --color-success-l, 36%) !default;
+/// color|1|Functional Color|1
+$--color-warning: hsl(var(#{--color-warning-h}), var(#{--color-warning-s}), var(#{--color-warning-l})) !default;
+
+$--color-warning-light-1: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 4%) !default;
+$--color-warning-light-2: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 8%) !default;
+$--color-warning-light-3: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 12%) !default;
+$--color-warning-light-4: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 16%) !default;
+$--color-warning-light-5: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 20%) !default;
+$--color-warning-light-6: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 24%) !default;
+$--color-warning-light-7: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 28%) !default;
+$--color-warning-light-8: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 32%) !default;
+$--color-warning-light-9: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 36%) !default;
+/// color|1|Functional Color|1
+$--color-danger: hsl(var(#{--color-danger-h}), var(#{--color-danger-s}), var(#{--color-danger-l})) !default;
+
+$--color-danger-light-1: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 4%) !default;
+$--color-danger-light-2: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 8%) !default;
+$--color-danger-light-3: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 12%) !default;
+$--color-danger-light-4: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 16%) !default;
+$--color-danger-light-5: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 20%) !default;
+$--color-danger-light-6: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 24%) !default;
+$--color-danger-light-7: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 28%) !default;
+$--color-danger-light-8: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 32%) !default;
+$--color-danger-light-9: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 36%) !default;
+/// color|1|Functional Color|1
+$--color-info: hsl(var(#{--color-info-h}), var(#{--color-info-s}), var(#{--color-info-l})) !default;
+
+$--color-info-light-1: lightness(--color-info-h, --color-info-s, --color-info-l, 4%) !default;
+$--color-info-light-2: lightness(--color-info-h, --color-info-s, --color-info-l, 8%) !default;
+$--color-info-light-3: lightness(--color-info-h, --color-info-s, --color-info-l, 12%) !default;
+$--color-info-light-4: lightness(--color-info-h, --color-info-s, --color-info-l, 16%) !default;
+$--color-info-light-5: lightness(--color-info-h, --color-info-s, --color-info-l, 20%) !default;
+$--color-info-light-6: lightness(--color-info-h, --color-info-s, --color-info-l, 24%) !default;
+$--color-info-light-7: lightness(--color-info-h, --color-info-s, --color-info-l, 28%) !default;
+$--color-info-light-8: lightness(--color-info-h, --color-info-s, --color-info-l, 32%) !default;
+$--color-info-light-9: lightness(--color-info-h, --color-info-s, --color-info-l, 36%) !default;
+
+$--color-primary-light: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 30%) !default;
+$--color-success-light: lightness(--color-success-h, --color-success-s, --color-success-l, 41%) !default;
+$--color-warning-light: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 34%) !default;
+$--color-danger-light: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 24%) !default;
+$--color-info-light: lightness(--color-info-h, --color-info-s, --color-info-l, 34%) !default;
+
+$--color-primary-lighter: lightness(--color-primary-h, --color-primary-s, --color-primary-l, 34%) !default;
+$--color-success-lighter: lightness(--color-success-h, --color-success-s, --color-success-l, 48%) !default;
+$--color-warning-lighter: lightness(--color-warning-h, --color-warning-s, --color-warning-l, 40%) !default;
+$--color-danger-lighter: lightness(--color-danger-h, --color-danger-s, --color-danger-l, 28%) !default;
+$--color-info-lighter: lightness(--color-info-h, --color-info-s, --color-info-l, 39%) !default;
+
 /// color|1|Font Color|2
-$--color-text-primary: #303133 !default;
+$--color-text-primary: hsl(var(#{--color-text-primary-h}), var(#{--color-text-primary-s}), var(#{--color-text-primary-l})) !default;
 /// color|1|Font Color|2
-$--color-text-regular: #606266 !default;
+$--color-text-regular: hsl(var(#{--color-text-regular-h}), var(#{--color-text-regular-s}), var(#{--color-text-regular-l})) !default;
 /// color|1|Font Color|2
-$--color-text-secondary: #909399 !default;
+$--color-text-secondary: hsl(var(#{--color-text-secondary-h}), var(#{--color-text-secondary-s}), var(#{--color-text-secondary-l})) !default;
 /// color|1|Font Color|2
-$--color-text-placeholder: #C0C4CC !default;
+$--color-text-placeholder: hsl(var(#{--color-text-placeholder-h}), var(#{--color-text-placeholder-s}), var(#{--color-text-placeholder-l})) !default;
 /// color|1|Border Color|3
-$--border-color-base: #DCDFE6 !default;
+$--border-color-base: hsl(var(#{--border-color-base-h}), var(#{--border-color-base-s}), var(#{--border-color-base-l})) !default;
 /// color|1|Border Color|3
-$--border-color-light: #E4E7ED !default;
+$--border-color-light: hsl(var(#{--border-color-light-h}), var(#{--border-color-light-s}), var(#{--border-color-light-l})) !default;
 /// color|1|Border Color|3
-$--border-color-lighter: #EBEEF5 !default;
+$--border-color-lighter: hsl(var(#{--border-color-lighter-h}), var(#{--border-color-lighter-s}), var(#{--border-color-lighter-l})) !default;
 /// color|1|Border Color|3
-$--border-color-extra-light: #F2F6FC !default;
+$--border-color-extra-light: hsl(var(#{--border-color-extra-light-h}), var(#{--border-color-extra-light-s}), var(#{--border-color-extra-light-l})) !default;
 
 // Background
 /// color|1|Background Color|4
-$--background-color-base: #F5F7FA !default;
+$--background-color-base: hsl(var(#{--background-color-base-h}), var(#{--background-color-base-s}), var(#{--background-color-base-l})) !default;
 
 /* Link
 -------------------------- */
@@ -589,7 +692,10 @@ $--button-info-font-color: $--color-white !default;
 $--button-info-background-color: $--color-info !default;
 
 $--button-hover-tint-percent: 20% !default;
+$--button-hover-tint-percent-css-variable: 8% !default;
 $--button-active-shade-percent: 10% !default;
+$--button-active-shade-percent-css-variable: 22% !default;
+
 
 
 /* cascader
@@ -759,7 +865,7 @@ $--card-padding: 20px !default;
 $--slider-main-background-color: $--color-primary !default;
 /// color||Color|0
 $--slider-runway-background-color: $--border-color-light !default;
-$--slider-button-hover-color: mix($--color-primary, black, 97%) !default;
+$--slider-button-hover-color: saturation(--color-primary-h, --color-primary-s, --color-primary-l, 8%) !default;
 $--slider-stop-background-color: $--color-white !default;
 $--slider-disable-color: $--color-text-placeholder !default;
 $--slider-margin: 16px 0 !default;
@@ -827,8 +933,8 @@ $--loading-fullscreen-spinner-size: 50px !default;
 
 /* Scrollbar
 --------------------------*/
-$--scrollbar-background-color: rgba($--color-text-secondary, .3) !default;
-$--scrollbar-hover-background-color: rgba($--color-text-secondary, .5) !default;
+$--scrollbar-background-color: hsla(var(#{--color-text-secondary-h}), var(#{--color-text-secondary-s}), var(#{--color-text-secondary-l}), .3) !default;
+$--scrollbar-hover-background-color: hsla(var(#{--color-text-secondary-h}), var(#{--color-text-secondary-s}), var(#{--color-text-secondary-l}), .5) !default;
 
 /* Carousel
 --------------------------*/
@@ -982,13 +1088,13 @@ $--breakpoints: (
 $--breakpoints-spec: (
   'xs-only' : (max-width: $--sm - 1),
   'sm-and-up' : (min-width: $--sm),
-  'sm-only': "(min-width: #{$--sm}) and (max-width: #{$--md - 1})",
+  'sm-only': (min-width: #{$--sm}) and (max-width: #{$--md - 1}),
   'sm-and-down': (max-width: $--md - 1),
   'md-and-up' : (min-width: $--md),
-  'md-only': "(min-width: #{$--md}) and (max-width: #{$--lg - 1})",
+  'md-only': (min-width: #{$--md}) and (max-width: #{$--lg - 1}),
   'md-and-down': (max-width: $--lg - 1),
   'lg-and-up' : (min-width: $--lg),
-  'lg-only': "(min-width: #{$--lg}) and (max-width: #{$--xl - 1})",
+  'lg-only': (min-width: #{$--lg}) and (max-width: #{$--xl - 1}),
   'lg-and-down': (max-width: $--xl - 1),
   'xl-only' : (min-width: $--xl),
 );

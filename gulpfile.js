@@ -1,9 +1,9 @@
 'use strict';
 
 const { series, src, dest } = require('gulp');
-const sass = require('gulp-sass');
+const sass = require('gulp-dart-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const cssmin = require('gulp-cssmin');
+const cleanCSS = require('gulp-clean-css');
 
 function compile() {
   return src('./src/*.scss')
@@ -12,13 +12,13 @@ function compile() {
       browsers: ['ie > 9', 'last 2 versions'],
       cascade: false
     }))
-    .pipe(cssmin())
+    .pipe(cleanCSS())
     .pipe(dest('./lib'));
 }
 
 function copyfont() {
   return src('./src/fonts/**')
-    .pipe(cssmin())
+    // .pipe(cssmin())
     .pipe(dest('./lib/fonts'));
 }
 

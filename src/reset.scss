@@ -14,11 +14,11 @@ a {
 
   &:hover,
   &:focus {
-    color: mix($--color-white, $--color-primary, $--button-hover-tint-percent);
+    color: lightness(--color-primary-h, --color-primary-s, ---color-primary-l, $--button-hover-tint-percent-css-variable)
   }
 
   &:active {
-    color: mix($--color-black, $--color-primary, $--button-active-shade-percent);
+    color: saturation(--color-primary-h, --color-primary-s, --color-primary-l, -$--button-active-shade-percent-css-variable);
   }
 }
 

@@ -32,11 +32,11 @@
       top: $gap;
       bottom: $gap;
       left: 0;
-      background: mix(white, transparent, 50%);
+      background: rgba($--color-white, .5);
     }
 
     &.el-button--default::before {
-      background: mix($--button-default-border-color, transparent, 50%);
+      background: hsla(var(#{--button-default-border-color-h}), var(#{--button-default-border-color-s}), var(#{--button-default-border-color-l}), .5);
     }
 
     &:hover {

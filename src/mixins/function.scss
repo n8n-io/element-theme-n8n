@@ -42,3 +42,11 @@
 
   @return containsModifier($selector) or containWhenFlag($selector) or containPseudoClass($selector);
 }
+
+@function lightness($h, $s, $l, $lightness) {
+  @return hsl(var(#{$h}), var(#{$s}), calc(var(#{$l}) + #{$lightness}))
+}
+
+@function saturation($h, $s, $l, $saturation) {
+  @return hsl(var(#{$h}), calc(var(#{$s}) + #{$saturation}), var(#{$l}))
+}
