@@ -1115,7 +1115,8 @@
         document.documentElement.style.setProperty(`--${key}-l`, hslColor.l);
       },
       copyCssVariables() {
-        this.cssVariables = document.querySelector('html').getAttribute('style')
+        const cssVariables = document.querySelector('html').getAttribute('style')
+        this.cssVariables = cssVariables ? cssVariables : '没有进行颜色修改，请先修改颜色！'
         this.visible = true
       }
     },

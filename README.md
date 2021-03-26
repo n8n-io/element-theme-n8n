@@ -3,7 +3,8 @@
 > 通过css变量控制的 element 组件主题
 
 
-[在线预览]()
+[在线预览 / Online preview](https://mars-ou1991.github.io/theme-chalk-css-variable/)
+
 
 
 ## Installation
