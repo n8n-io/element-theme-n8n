@@ -5,7 +5,10 @@
 
 [在线预览 / Online preview](https://mars-ou1991.github.io/theme-chalk-css-variable/)
 
+## Compatibility
 
+CSS Variable 兼容性
+https://caniuse.com/css-variables
 
 ## Installation
 ```shell
