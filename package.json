@@ -1,5 +1,5 @@
 {
-  "name": "element-theme-chalk-css-variable",
+  "name": "element-theme-n8n",
   "version": "0.1.0",
   "description": "Element component chalk theme by css variable.",
   "main": "lib/index.css",
@@ -13,13 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mars-ou1991/theme-chalk-css-variable.git"
+    "url": "git+https://github.com/n8n-io/element-theme-n8n"
   },
   "keywords": [
     "element",
     "theme"
   ],
-  "author": "foolnofool@gmail.com",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^4.0.2",

@@ -1,30 +1,28 @@
 # element-theme-chalk-css-variable
 > element component chalk theme by css variable.
-> 通过css变量控制的 element 组件主题
 
-
-[在线预览 / Online preview](https://mars-ou1991.github.io/theme-chalk-css-variable/)
+[Online preview](https://n8n-io.github.io/element-theme-n8n/)
 
 ## Compatibility
 
-CSS Variable 兼容性
+CSS Variable
 https://caniuse.com/css-variables
 
 ## Installation
 ```shell
-npm i element-theme-chalk-css-variable -S
+npm i element-theme-n8n -S
 ```
 
 ## Usage
 
 Use Sass import
 ```css
-@import 'element-theme-chalk-css-variable';
+@import 'element-theme-n8n';
 ```
 
 Or Use webpack
 ```javascript
-import 'element-theme-chalk-css-variable';
+import 'element-theme-n8n';
 ```
 
 Or
@@ -34,8 +32,8 @@ Or
 
 ##  Import on demand
 ```javascript
-import 'element-theme-chalk-css-variable/lib/input.css';
-import 'element-theme-chalk-css-variable/lib/select.css';
+import 'element-theme-n8n/lib/input.css';
+import 'element-theme-n8n/lib/select.css';
 
 // ...
 ```
