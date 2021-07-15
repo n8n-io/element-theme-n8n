@@ -18,7 +18,6 @@ function compile() {
 
 function copyfont() {
   return src('./src/fonts/**')
-    // .pipe(cssmin())
     .pipe(dest('./lib/fonts'));
 }
 
