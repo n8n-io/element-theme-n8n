@@ -1,4 +1,4 @@
-# element-theme-chalk-css-variable
+# element-theme-n8n
 > element component chalk theme by css variable.
 
 [Online preview](https://n8n-io.github.io/element-theme-n8n/)

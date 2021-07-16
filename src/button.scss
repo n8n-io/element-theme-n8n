@@ -45,13 +45,13 @@
       --color-primary-h,
       --color-primary-s,
       --color-primary-l,
-      -(var.$button-active-shade-percent-css-variable)
+      -(var.$button-active-shade-percent)
     );
     border-color: function.saturation(
       --color-primary-h,
       --color-primary-s,
       --color-primary-l,
-      -(var.$button-active-shade-percent-css-variable)
+      -(var.$button-active-shade-percent)
     );
     outline: none;
   }
@@ -80,13 +80,13 @@
         --color-primary-h,
         --color-primary-s,
         --color-primary-l,
-        -(var.$button-active-shade-percent-css-variable)
+        -(var.$button-active-shade-percent)
       );
       color: function.saturation(
         --color-primary-h,
         --color-primary-s,
         --color-primary-l,
-        -(var.$button-active-shade-percent-css-variable)
+        -(var.$button-active-shade-percent)
       );
       outline: none;
     }
@@ -97,13 +97,13 @@
       --color-primary-h,
       --color-primary-s,
       --color-primary-l,
-      -(var.$button-active-shade-percent-css-variable)
+      -(var.$button-active-shade-percent)
     );
     border-color: function.saturation(
       --color-primary-h,
       --color-primary-s,
       --color-primary-l,
-      -(var.$button-active-shade-percent-css-variable)
+      -(var.$button-active-shade-percent)
     );
   }
 
@@ -253,7 +253,7 @@
         --color-primary-h,
         --color-primary-s,
         --color-primary-l,
-        var.$button-hover-tint-percent-css-variable
+        var.$button-hover-tint-percent
       );
       border-color: transparent;
       background-color: transparent;
@@ -263,7 +263,7 @@
         --color-primary-h,
         --color-primary-s,
         --color-primary-l,
-        -(var.$button-active-shade-percent-css-variable)
+        -(var.$button-active-shade-percent)
       );
       border-color: transparent;
       background-color: transparent;

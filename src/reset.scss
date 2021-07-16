@@ -15,11 +15,11 @@ a {
 
   &:hover,
   &:focus {
-    color: function.lightness(--color-primary-h, --color-primary-s, ---color-primary-l, var.$button-hover-tint-percent-css-variable)
+    color: function.lightness(--color-primary-h, --color-primary-s, ---color-primary-l, var.$button-hover-tint-percent)
   }
 
   &:active {
-    color: function.saturation(--color-primary-h, --color-primary-s, --color-primary-l, -(var.$button-active-shade-percent-css-variable));
+    color: function.saturation(--color-primary-h, --color-primary-s, --color-primary-l, -(var.$button-active-shade-percent));
   }
 }
 
