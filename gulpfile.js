@@ -46,6 +46,6 @@ gulp.task('build', gulp.series([compileTokens, compile, copyfont]))
 gulp.task('build:tokens', compileTokens);
 
 gulp.task('watch', gulp.series(['build', () => {
-	gulp.watch('./src/tokens/**.json', gulp.series(['build:tokens']));
+	gulp.watch('./src/tokens/**/*.json', gulp.series(['build:tokens']));
 	gulp.watch('./src/**/*.scss', gulp.series(['build']));
 }]));
