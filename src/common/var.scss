@@ -76,7 +76,6 @@ $color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-// $color-primary: hsl(210, 100%, 63%) !default;
 $color-primary: hsl(var(#{--color-primary-h}), var(#{--color-primary-s}), var(#{--color-primary-l})) !default;
 /// color|1|Background Color|4
 $color-white: #FFFFFF !default;
