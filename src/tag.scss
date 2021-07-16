@@ -1,5 +1,5 @@
 @import "mixins/mixins";
-@import "common/var";
+@import "./common/var";
 
 @mixin genTheme() {
   background-color: $--color-primary-lighter;

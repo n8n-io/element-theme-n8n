@@ -1,6 +1,6 @@
 @import "mixins/mixins";
 @import "mixins/_button";
-@import "common/var";
+@import "./common/var";
 
 @include b(radio-button) {
   position: relative;

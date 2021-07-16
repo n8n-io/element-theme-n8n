@@ -1,5 +1,5 @@
 @import "mixins/mixins";
-@import "common/var";
+@import "./common/var";
 
 @include b(avatar) {
   display: inline-block;

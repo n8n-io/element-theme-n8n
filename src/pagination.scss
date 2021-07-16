@@ -1,6 +1,6 @@
 @import "mixins/mixins";
 @import "mixins/utils";
-@import "common/var";
+@import "./common/var";
 @import "select";
 
 @include b(pagination) {

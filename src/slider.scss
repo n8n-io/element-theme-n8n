@@ -2,7 +2,7 @@
 @import "mixins/utils";
 @import "input-number";
 @import "tooltip";
-@import "common/var";
+@import "./common/var";
 
 @include b(slider) {
 
