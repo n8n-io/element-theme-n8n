@@ -1,18 +1,18 @@
-@import "../common/var";
-@import "../mixins/mixins";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(date-table) {
+@include mixins.b(date-table) {
   font-size: 12px;
   user-select: none;
 
-  @include when(week-mode) {
+  @include mixins.when(week-mode) {
     .el-date-table__row {
       &:hover {
         div {
-          background-color: $--datepicker-inrange-background-color;
+          background-color: var.$datepicker-inrange-background-color;
         }
         td.available:hover {
-          color: $--datepicker-font-color;
+          color: var.$datepicker-font-color;
         }
         td:first-child div {
           margin-left: 5px;
@@ -27,7 +27,7 @@
       }
 
       &.current div {
-        background-color: $--datepicker-inrange-background-color;
+        background-color: var.$datepicker-inrange-background-color;
       }
     }
   }
@@ -61,44 +61,44 @@
 
     &.next-month,
     &.prev-month {
-      color: $--datepicker-off-font-color;
+      color: var.$datepicker-off-font-color;
     }
 
     &.today {
       position: relative;
       span {
-        color: $--color-primary;
+        color: var.$color-primary;
         font-weight: bold;
       }
       &.start-date span,
       &.end-date span {
-        color: $--color-white;
+        color: var.$color-white;
       }
     }
 
     &.available:hover {
-      color: $--datepicker-hover-font-color;
+      color: var.$datepicker-hover-font-color;
     }
 
     &.in-range div {
-      background-color: $--datepicker-inrange-background-color;
+      background-color: var.$datepicker-inrange-background-color;
       &:hover {
-        background-color: $--datepicker-inrange-hover-background-color;
+        background-color: var.$datepicker-inrange-hover-background-color;
       }
     }
 
     &.current:not(.disabled) span {
-      color: $--color-white;
-      background-color: $--datepicker-active-color;
+      color: var.$color-white;
+      background-color: var.$datepicker-active-color;
     }
     &.start-date div,
     &.end-date div {
-      color: $--color-white;
+      color: var.$color-white;
     }
 
     &.start-date span,
     &.end-date span {
-      background-color: $--datepicker-active-color;
+      background-color: var.$datepicker-active-color;
     }
 
     &.start-date div {
@@ -114,38 +114,38 @@
     }
 
     &.disabled div {
-      background-color: $--background-color-base;
+      background-color: var.$background-color-base;
       opacity: 1;
       cursor: not-allowed;
-      color: $--color-text-placeholder;
+      color: var.$color-text-placeholder;
     }
 
     &.selected div {
       margin-left: 5px;
       margin-right: 5px;
-      background-color: $--datepicker-inrange-background-color;
+      background-color: var.$datepicker-inrange-background-color;
       border-radius: 15px;
       &:hover {
-        background-color: $--datepicker-inrange-hover-background-color;
+        background-color: var.$datepicker-inrange-hover-background-color;
       }
     }
 
     &.selected span {
-      background-color: $--datepicker-active-color;
-      color: $--color-white;
+      background-color: var.$datepicker-active-color;
+      color: var.$color-white;
       border-radius: 15px;
     }
 
     &.week {
       font-size: 80%;
-      color: $--datepicker-header-font-color;
+      color: var.$datepicker-header-font-color;
     }
   }
 
   th {
     padding: 5px;
-    color: $--datepicker-header-font-color;
+    color: var.$datepicker-header-font-color;
     font-weight: 400;
-    border-bottom: solid 1px $--border-color-lighter;
+    border-bottom: solid 1px var.$border-color-lighter;
   }
 }

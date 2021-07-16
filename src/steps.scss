@@ -1,19 +1,20 @@
-@import "mixins/mixins";
+@use "mixins/mixins";
+@use "common/var";
 
-@include b(steps) {
+@include mixins.b(steps) {
   display: flex;
 
-  @include m(simple) {
+  @include mixins.m(simple) {
     padding: 13px 8%;
     border-radius: 4px;
-    background: $--background-color-base;
+    background: var.$background-color-base;
   }
 
-  @include m(horizontal) {
+  @include mixins.m(horizontal) {
     white-space: nowrap;
   }
 
-  @include m(vertical) {
+  @include mixins.m(vertical) {
     height: 100%;
     flex-flow: column;
   }

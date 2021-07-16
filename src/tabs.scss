@@ -1,23 +1,23 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(tabs) {
-  @include e(header) {
+@include mixins.b(tabs) {
+  @include mixins.e(header) {
     padding: 0;
     position: relative;
     margin: 0 0 15px;
   }
-  @include e(active-bar) {
+  @include mixins.e(active-bar) {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 2px;
-    background-color: $--color-primary;
+    background-color: var.$color-primary;
     z-index: 1;
     transition: transform .3s cubic-bezier(.645,.045,.355,1);
     list-style: none;
   }
-  @include e(new-tab) {
+  @include mixins.e(new-tab) {
     float: right;
     border: 1px solid #d3dce6;
     height: 18px;
@@ -36,10 +36,10 @@
     }
 
     &:hover {
-      color: $--color-primary;
+      color: var.$color-primary;
     }
   }
-  @include e(nav-wrap) {
+  @include mixins.e(nav-wrap) {
     overflow: hidden;
     margin-bottom: -1px;
     position: relative;
@@ -51,39 +51,39 @@
       bottom: 0;
       width: 100%;
       height: 2px;
-      background-color: $--border-color-light;
-      z-index: $--index-normal;
+      background-color: var.$border-color-light;
+      z-index: var.$index-normal;
     }
 
-    @include when(scrollable) {
+    @include mixins.when(scrollable) {
       padding: 0 20px;
       box-sizing: border-box;
     }
   }
-  @include e(nav-scroll) {
+  @include mixins.e(nav-scroll) {
     overflow: hidden;
   }
-  @include e((nav-next, nav-prev)) {
+  @include mixins.e((nav-next, nav-prev)) {
     position: absolute;
     cursor: pointer;
     line-height: 44px;
     font-size: 12px;
-    color: $--color-text-secondary;
+    color: var.$color-text-secondary;
   }
-  @include e(nav-next) {
+  @include mixins.e(nav-next) {
     right: 0;
   }
-  @include e(nav-prev) {
+  @include mixins.e(nav-prev) {
     left: 0;
   }
-  @include e(nav) {
+  @include mixins.e(nav) {
     white-space: nowrap;
     position: relative;
     transition: transform .3s;
     float: left;
-    z-index: #{$--index-normal + 1};
+    z-index: #{var.$index-normal + 1};
 
-    @include when(stretch) {
+    @include mixins.when(stretch) {
       min-width: 100%;
       display: flex;
       & > * {
@@ -92,7 +92,7 @@
       }
     }
   }
-  @include e(item) {
+  @include mixins.e(item) {
     padding: 0 20px;
     height: 40px;
     box-sizing: border-box;
@@ -101,7 +101,7 @@
     list-style: none;
     font-size: 14px;
     font-weight: 500;
-    color: $--color-text-primary;
+    color: var.$color-text-primary;
     position: relative;
 
     &:focus, &:focus:active {
@@ -109,7 +109,7 @@
     }
 
     &:focus.is-active.is-focus:not(:active) {
-      box-shadow: 0 0 2px 2px $--color-primary inset;
+      box-shadow: 0 0 2px 2px var.$color-primary inset;
       border-radius: 3px;
     }
 
@@ -124,38 +124,38 @@
       }
 
       &:hover {
-        background-color: $--color-text-placeholder;
-        color: $--color-white;
+        background-color: var.$color-text-placeholder;
+        color: var.$color-white;
       }
     }
 
-    @include when(active) {
-      color: $--color-primary;
+    @include mixins.when(active) {
+      color: var.$color-primary;
     }
 
     &:hover {
-      color: $--color-primary;
+      color: var.$color-primary;
       cursor: pointer;
     }
 
-    @include when(disabled) {
-      color: $--disabled-color-base;
+    @include mixins.when(disabled) {
+      color: var.$disabled-color-base;
       cursor: default;
     }
   }
-  @include e(content) {
+  @include mixins.e(content) {
     overflow: hidden;
     position: relative;
   }
-  @include m(card) {
+  @include mixins.m(card) {
     > .el-tabs__header {
-      border-bottom: 1px solid $--border-color-light;
+      border-bottom: 1px solid var.$border-color-light;
     }
     > .el-tabs__header .el-tabs__nav-wrap::after {
       content: none;
     }
     > .el-tabs__header .el-tabs__nav {
-      border: 1px solid $--border-color-light;
+      border: 1px solid var.$border-color-light;
       border-bottom: none;
       border-radius: 4px 4px 0 0;
       box-sizing: border-box;
@@ -177,7 +177,7 @@
     }
     > .el-tabs__header .el-tabs__item {
       border-bottom: 1px solid transparent;
-      border-left: 1px solid $--border-color-light;
+      border-left: 1px solid var.$border-color-light;
       transition: color .3s cubic-bezier(.645,.045,.355,1), padding .3s cubic-bezier(.645,.045,.355,1);
       &:first-child {
         border-left: none;
@@ -193,7 +193,7 @@
         }
       }
       &.is-active {
-        border-bottom-color: $--color-white;
+        border-bottom-color: var.$color-white;
 
         &.is-closable {
           padding-left: 20px;
@@ -206,17 +206,17 @@
       }
     }
   }
-  @include m(border-card) {
-    background: $--color-white;
-    border: 1px solid $--border-color-base;
+  @include mixins.m(border-card) {
+    background: var.$color-white;
+    border: 1px solid var.$border-color-base;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.12), 0 0 6px 0 rgba(0,0,0,0.04);
 
     > .el-tabs__content {
       padding: 15px;
     }
     > .el-tabs__header {
-      background-color: $--background-color-base;
-      border-bottom: 1px solid $--border-color-light;
+      background-color: var.$background-color-base;
+      border-bottom: 1px solid var.$border-color-light;
       margin: 0;
     }
     > .el-tabs__header .el-tabs__nav-wrap::after {
@@ -226,7 +226,7 @@
       transition: all .3s cubic-bezier(.645,.045,.355,1);
       border: 1px solid transparent;
       margin-top: -1px;
-      color: $--color-text-secondary;
+      color: var.$color-text-secondary;
 
       &:first-child {
         margin-left: -1px;
@@ -237,16 +237,16 @@
       }
 
       &.is-active {
-        color: $--color-primary;
-        background-color: $--color-white;
-        border-right-color: $--border-color-base;
-        border-left-color: $--border-color-base;
+        color: var.$color-primary;
+        background-color: var.$color-white;
+        border-right-color: var.$border-color-base;
+        border-left-color: var.$border-color-base;
       }
       &:not(.is-disabled):hover {
-        color: $--color-primary;
+        color: var.$color-primary;
       }
       &.is-disabled {
-        color: $--disabled-color-base;
+        color: var.$disabled-color-base;
       }
     }
 
@@ -254,7 +254,7 @@
       margin-left: 0;
     }
   }
-  @include m((top, bottom)) {
+  @include mixins.m((top, bottom)) {
     .el-tabs__item.is-top:nth-child(2),
     .el-tabs__item.is-bottom:nth-child(2) {
       padding-left: 0;
@@ -276,7 +276,7 @@
       }
     }
   }
-  @include m(bottom) {
+  @include mixins.m(bottom) {
     .el-tabs__header.is-bottom {
       margin-bottom: 0;
       margin-top: 10px;
@@ -284,7 +284,7 @@
     &.el-tabs--border-card {
       .el-tabs__header.is-bottom {
         border-bottom: 0;
-        border-top: 1px solid $--border-color-base;
+        border-top: 1px solid var.$border-color-base;
       }
       .el-tabs__nav-wrap.is-bottom {
         margin-top: -1px;
@@ -298,7 +298,7 @@
       }
     }
   }
-  @include m((left, right)) {
+  @include mixins.m((left, right)) {
     overflow: hidden;
 
     .el-tabs__header.is-left,
@@ -363,7 +363,7 @@
       display: block;
     }
   }
-  @include m(left) {
+  @include mixins.m(left) {
     .el-tabs__header.is-left {
       float: left;
       margin-bottom: 0;
@@ -390,17 +390,17 @@
       }
       .el-tabs__item.is-left {
         border-left: none;
-        border-right: 1px solid $--border-color-light;
+        border-right: 1px solid var.$border-color-light;
         border-bottom: none;
-        border-top: 1px solid $--border-color-light;
+        border-top: 1px solid var.$border-color-light;
         text-align: left;
       }
       .el-tabs__item.is-left:first-child {
-        border-right: 1px solid $--border-color-light;
+        border-right: 1px solid var.$border-color-light;
         border-top: none;
       }
       .el-tabs__item.is-left.is-active {
-        border: 1px solid $--border-color-light;
+        border: 1px solid var.$border-color-light;
         border-right-color: #fff;
         border-left: none;
         border-bottom: none;
@@ -415,7 +415,7 @@
 
       .el-tabs__nav {
         border-radius: 4px 0 0 4px;
-        border-bottom: 1px solid $--border-color-light;
+        border-bottom: 1px solid var.$border-color-light;
         border-right: none;
       }
 
@@ -440,7 +440,7 @@
       }
     }
   }
-  @include m(right) {
+  @include mixins.m(right) {
     .el-tabs__header.is-right {
       float: right;
       margin-bottom: 0;
@@ -465,14 +465,14 @@
       }
       .el-tabs__item.is-right {
         border-bottom: none;
-        border-top: 1px solid $--border-color-light;
+        border-top: 1px solid var.$border-color-light;
       }
       .el-tabs__item.is-right:first-child {
-        border-left: 1px solid $--border-color-light;
+        border-left: 1px solid var.$border-color-light;
         border-top: none;
       }
       .el-tabs__item.is-right.is-active {
-        border: 1px solid $--border-color-light;
+        border: 1px solid var.$border-color-light;
         border-left-color: #fff;
         border-right: none;
         border-bottom: none;
@@ -487,7 +487,7 @@
 
       .el-tabs__nav {
         border-radius: 0 4px 4px 0;
-        border-bottom: 1px solid $--border-color-light;
+        border-bottom: 1px solid var.$border-color-light;
         border-left: none;
       }
     }

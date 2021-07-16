@@ -1,16 +1,16 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(notification) {
+@include mixins.b(notification) {
   display: flex;
-  width: $--notification-width;
-  padding: $--notification-padding;
-  border-radius: $--notification-radius;
+  width: var.$notification-width;
+  padding: var.$notification-padding;
+  border-radius: var.$notification-radius;
   box-sizing: border-box;
-  border: 1px solid $--notification-border-color;
+  border: 1px solid var.$notification-border-color;
   position: fixed;
-  background-color: $--color-white;
-  box-shadow: $--notification-shadow;
+  background-color: var.$color-white;
+  box-shadow: var.$notification-shadow;
   transition: opacity .3s, transform .3s, left .3s, right .3s, top 0.4s, bottom .3s;
   overflow: hidden;
 
@@ -22,23 +22,23 @@
     left: 16px;
   }
 
-  @include e(group) {
-    margin-left: $--notification-group-margin-left;
-    margin-right: $--notification-group-margin-right;
+  @include mixins.e(group) {
+    margin-left: var.$notification-group-margin-left;
+    margin-right: var.$notification-group-margin-right;
   }
 
-  @include e(title) {
+  @include mixins.e(title) {
     font-weight: bold;
-    font-size: $--notification-title-font-size;
-    color: $--notification-title-color;
+    font-size: var.$notification-title-font-size;
+    color: var.$notification-title-color;
     margin: 0;
   }
 
-  @include e(content) {
-    font-size: $--notification-content-font-size;
+  @include mixins.e(content) {
+    font-size: var.$notification-content-font-size;
     line-height: 21px;
     margin: 6px 0 0 0;
-    color: $--notification-content-color;
+    color: var.$notification-content-color;
     text-align: justify;
 
     p {
@@ -46,39 +46,39 @@
     }
   }
 
-  @include e(icon) {
-    height: $--notification-icon-size;
-    width: $--notification-icon-size;
-    font-size: $--notification-icon-size;
+  @include mixins.e(icon) {
+    height: var.$notification-icon-size;
+    width: var.$notification-icon-size;
+    font-size: var.$notification-icon-size;
   }
 
-  @include e(closeBtn) {
+  @include mixins.e(closeBtn) {
     position: absolute;
     top: 18px;
     right: 15px;
     cursor: pointer;
-    color: $--notification-close-color;
-    font-size: $--notification-close-font-size;
+    color: var.$notification-close-color;
+    font-size: var.$notification-close-font-size;
 
     &:hover {
-      color: $--notification-close-hover-color;
+      color: var.$notification-close-hover-color;
     }
   }
 
   .el-icon-success {
-    color: $--notification-success-icon-color;
+    color: var.$notification-success-icon-color;
   }
 
   .el-icon-error {
-    color: $--notification-danger-icon-color;
+    color: var.$notification-danger-icon-color;
   }
 
   .el-icon-info {
-    color: $--notification-info-icon-color;
+    color: var.$notification-info-icon-color;
   }
 
   .el-icon-warning {
-    color: $--notification-warning-icon-color;
+    color: var.$notification-warning-icon-color;
   }
 }
 

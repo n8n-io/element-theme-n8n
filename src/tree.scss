@@ -1,15 +1,15 @@
-@import "mixins/mixins";
-@import "./common/var";
-@import "common/transition";
-@import "checkbox";
+@use "mixins/mixins";
+@use "./common/var";
+@use "common/transition";
+@use "checkbox";
 
-@include b(tree) {
+@include mixins.b(tree) {
   position: relative;
   cursor: default;
-  background: $--color-white;
-  color: $--tree-font-color;
+  background: var.$color-white;
+  color: var.$tree-font-color;
 
-  @include e(empty-block) {
+  @include mixins.e(empty-block) {
     position: relative;
     min-height: 60px;
     text-align: center;
@@ -17,41 +17,41 @@
     height: 100%;
   }
 
-  @include e(empty-text) {
+  @include mixins.e(empty-text) {
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    color: $--color-text-secondary;
-    font-size: $--font-size-base;
+    color: var.$color-text-secondary;
+    font-size: var.$font-size-base;
   }
 
-  @include e(drop-indicator) {
+  @include mixins.e(drop-indicator) {
     position: absolute;
     left: 0;
     right: 0;
     height: 1px;
-    background-color: $--color-primary;
+    background-color: var.$color-primary;
   }
 }
 
-@include b(tree-node) {
+@include mixins.b(tree-node) {
   white-space: nowrap;
   outline: none;
   &:focus { /* focus */
     > .el-tree-node__content {
-      background-color: $--tree-node-hover-background-color;
+      background-color: var.$tree-node-hover-background-color;
     }
   }
 
-  @include when(drop-inner) {
+  @include mixins.when(drop-inner) {
     > .el-tree-node__content .el-tree-node__label {
-      background-color: $--color-primary;
+      background-color: var.$color-primary;
       color: #fff;
     }
   }
 
-  @include e(content) {
+  @include mixins.e(content) {
     display: flex;
     align-items: center;
     height: 26px;
@@ -64,7 +64,7 @@
       margin-right: 8px;
     }
     &:hover {
-      background-color: $--tree-node-hover-background-color;
+      background-color: var.$tree-node-hover-background-color;
     }
 
     .el-tree.is-dragging & {
@@ -80,9 +80,9 @@
     }
   }
 
-  @include e(expand-icon) {
+  @include mixins.e(expand-icon) {
     cursor: pointer;
-    color: $--tree-expand-icon-color;
+    color: var.$tree-expand-icon-color;
     font-size: 12px;
 
     transform: rotate(0deg);
@@ -98,14 +98,14 @@
     }
   }
 
-  @include e(label) {
-    font-size: $--font-size-base;
+  @include mixins.e(label) {
+    font-size: var.$font-size-base;
   }
 
-  @include e(loading-icon) {
+  @include mixins.e(loading-icon) {
     margin-right: 8px;
-    font-size: $--font-size-base;
-    color: $--tree-expand-icon-color;
+    font-size: var.$font-size-base;
+    color: var.$tree-expand-icon-color;
   }
 
   & > .el-tree-node__children {
@@ -119,5 +119,5 @@
 }
 
 .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
-  background-color: $--color-primary-lighter;
+  background-color: var.$color-primary-lighter;
 }

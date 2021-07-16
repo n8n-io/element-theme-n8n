@@ -1,34 +1,34 @@
-@import "mixins/mixins";
-@import "./common/var";
-@import "./popper";
+@use "mixins/mixins";
+@use "./common/var";
+@use "./popper";
 
-@include b(popover) {
+@include mixins.b(popover) {
   position: absolute;
-  background: $--popover-background-color;
+  background: var.$popover-background-color;
   min-width: 150px;
   border-radius: 4px;
-  border: 1px solid $--popover-border-color;
-  padding: $--popover-padding;
-  z-index: $--index-popper;
-  color: $--color-text-regular;
+  border: 1px solid var.$popover-border-color;
+  padding: var.$popover-padding;
+  z-index: var.$index-popper;
+  color: var.$color-text-regular;
   line-height: 1.4;
   text-align: justify;
-  font-size: $--popover-font-size;
-  box-shadow: $--box-shadow-light;
+  font-size: var.$popover-font-size;
+  box-shadow: var.$box-shadow-light;
   word-break: break-all;
 
-  @include m(plain) {
-    padding: $--popover-padding-large;
+  @include mixins.m(plain) {
+    padding: var.$popover-padding-large;
   }
 
-  @include e(title) {
-    color: $--popover-title-font-color;
-    font-size: $--popover-title-font-size;
+  @include mixins.e(title) {
+    color: var.$popover-title-font-color;
+    font-size: var.$popover-title-font-size;
     line-height: 1;
     margin-bottom: 12px;
   }
 
-  @include e(reference) {
+  @include mixins.e(reference) {
     &:focus:not(.focusing), &:focus:hover {
       outline-width: 0;
     }

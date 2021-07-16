@@ -1,25 +1,25 @@
-@import "mixins/mixins";
-@import "./common/var";
-@import "./checkbox";
-@import "./radio";
-@import "./scrollbar";
+@use "mixins/mixins";
+@use "./common/var";
+@use "./checkbox";
+@use "./radio";
+@use "./scrollbar";
 
-@include b(cascader-panel) {
+@include mixins.b(cascader-panel) {
   display: flex;
-  border-radius: $--cascader-menu-radius;
-  font-size: $--cascader-menu-font-size;
+  border-radius: var.$cascader-menu-radius;
+  font-size: var.$cascader-menu-font-size;
 
-  @include when(bordered) {
-    border: $--cascader-menu-border;
-    border-radius: $--cascader-menu-radius;
+  @include mixins.when(bordered) {
+    border: var.$cascader-menu-border;
+    border-radius: var.$cascader-menu-radius;
   }
 }
 
-@include b(cascader-menu) {
+@include mixins.b(cascader-menu) {
   min-width: 180px;
   box-sizing: border-box;
-  color: $--cascader-menu-font-color;
-  border-right: $--cascader-menu-border;
+  color: var.$cascader-menu-font-color;
+  border-right: var.$cascader-menu-border;
 
   &:last-child {
     border-right: none;
@@ -28,11 +28,11 @@
     }
   }
 
-  @include e(wrap) {
+  @include mixins.e(wrap) {
     height: 204px;
   }
 
-  @include e(list) {
+  @include mixins.e(list) {
     position: relative;
     min-height: 100%;
     margin: 0;
@@ -41,7 +41,7 @@
     box-sizing: border-box;
   }
 
-  @include e(hover-zone) {
+  @include mixins.e(hover-zone) {
     position: absolute;
     top: 0;
     left: 0;
@@ -50,17 +50,17 @@
     pointer-events: none;
   }
 
-  @include e(empty-text) {
+  @include mixins.e(empty-text) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: $--cascader-color-empty;
+    color: var.$cascader-color-empty;
   }
 }
 
-@include b(cascader-node) {
+@include mixins.b(cascader-node) {
   position: relative;
   display: flex;
   align-items: center;
@@ -70,39 +70,39 @@
   outline: none;
 
   &.is-selectable.in-active-path {
-    color: $--cascader-menu-font-color;
+    color: var.$cascader-menu-font-color;
   }
 
   &.in-active-path,
   &.is-selectable.in-checked-path,
   &.is-active {
-    color: $--cascader-menu-selected-font-color;
+    color: var.$cascader-menu-selected-font-color;
     font-weight: bold;
   }
 
   &:not(.is-disabled) {
     cursor: pointer;
     &:hover, &:focus {
-      background: $--cascader-node-background-hover;
+      background: var.$cascader-node-background-hover;
     }
   }
 
-  @include when(disabled) {
-    color: $--cascader-node-color-disabled;
+  @include mixins.when(disabled) {
+    color: var.$cascader-node-color-disabled;
     cursor: not-allowed;
   }
 
-  @include e(prefix) {
+  @include mixins.e(prefix) {
     position: absolute;
     left: 10px;
   }
 
-  @include e(postfix) {
+  @include mixins.e(postfix) {
     position: absolute;
     right: 10px;
   }
 
-  @include e(label) {
+  @include mixins.e(label) {
     flex: 1;
     padding: 0 10px;
     white-space: nowrap;

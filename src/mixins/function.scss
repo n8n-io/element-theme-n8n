@@ -1,17 +1,19 @@
-@import "config";
+@use "sass:meta";
+@use "sass:string";
+@use "config";
 
 /* BEM support Func
  -------------------------- */
 @function selectorToString($selector) {
-  $selector: inspect($selector);
-  $selector: str-slice($selector, 2, -2);
+  $selector: meta.inspect($selector);
+  $selector: string.slice($selector, 2, -2);
   @return $selector;
 }
 
 @function containsModifier($selector) {
   $selector: selectorToString($selector);
 
-  @if str-index($selector, $modifier-separator) {
+  @if string.index($selector, config.$modifier-separator) {
     @return true;
   } @else {
     @return false;
@@ -21,7 +23,7 @@
 @function containWhenFlag($selector) {
   $selector: selectorToString($selector);
 
-  @if str-index($selector, '.' + $state-prefix) {
+  @if string.index($selector, '.' + config.$state-prefix) {
     @return true
   } @else {
     @return false
@@ -31,7 +33,7 @@
 @function containPseudoClass($selector) {
   $selector: selectorToString($selector);
 
-  @if str-index($selector, ':') {
+  @if string.index($selector, ':') {
     @return true
   } @else {
     @return false

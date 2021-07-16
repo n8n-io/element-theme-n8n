@@ -1,16 +1,17 @@
-@import "../common/var";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(time-range-picker) {
+@include mixins.b(time-range-picker) {
   width: 354px;
   overflow: visible;
 
-  @include e(content) {
+  @include mixins.e(content) {
     position: relative;
     text-align: center;
     padding: 10px;
   }
 
-  @include e(cell) {
+  @include mixins.e(cell) {
     box-sizing: border-box;
     margin: 0;
     padding: 4px 7px 7px;
@@ -18,14 +19,14 @@
     display: inline-block;
   }
 
-  @include e(header) {
+  @include mixins.e(header) {
     margin-bottom: 5px;
     text-align: center;
     font-size: 14px;
   }
 
-  @include e(body) {
+  @include mixins.e(body) {
     border-radius:2px;
-    border: 1px solid $--datepicker-border-color;
+    border: 1px solid var.$datepicker-border-color;
   }
 }

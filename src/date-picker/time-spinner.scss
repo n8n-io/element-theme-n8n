@@ -1,13 +1,14 @@
-@import "../common/var";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(time-spinner) {
+@include mixins.b(time-spinner) {
   &.has-seconds {
     .el-time-spinner__wrapper {
       width: 33.3%;
     }
   }
 
-  @include e(wrapper) {
+  @include mixins.e(wrapper) {
     max-height: 190px;
     overflow: auto;
     display: inline-block;
@@ -19,7 +20,7 @@
       padding-bottom: 15px;
     }
 
-    @include when(arrow) {
+    @include mixins.when(arrow) {
       box-sizing: border-box;
       text-align: center;
       overflow: hidden;
@@ -29,26 +30,26 @@
       }
 
       .el-time-spinner__item:hover:not(.disabled):not(.active) {
-        background: $--color-white;
+        background: var.$color-white;
         cursor: default;
       }
     }
   }
 
-  @include e(arrow) {
+  @include mixins.e(arrow) {
     font-size: 12px;
-    color: $--color-text-secondary;
+    color: var.$color-text-secondary;
     position: absolute;
     left: 0;
     width: 100%;
-    z-index: $--index-normal;
+    z-index: var.$index-normal;
     text-align: center;
     height: 30px;
     line-height: 30px;
     cursor: pointer;
 
     &:hover {
-      color: $--color-primary;
+      color: var.$color-primary;
     }
 
     &.el-icon-arrow-up {
@@ -60,7 +61,7 @@
     }
   }
 
-  @include e(input) {
+  @include mixins.e(input) {
     &.el-input {
       width: 70%;
 
@@ -71,7 +72,7 @@
     }
   }
 
-  @include e(list) {
+  @include mixins.e(list) {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -86,24 +87,24 @@
     }
   }
 
-  @include e(item) {
+  @include mixins.e(item) {
     height: 32px;
     line-height: 32px;
     font-size: 12px;
-    color: $--color-text-regular;
+    color: var.$color-text-regular;
 
     &:hover:not(.disabled):not(.active) {
-      background: $--background-color-base;
+      background: var.$background-color-base;
       cursor: pointer;
     }
 
     &.active:not(.disabled) {
-      color: $--color-text-primary;
+      color: var.$color-text-primary;
       font-weight: bold;
     }
 
     &.disabled {
-      color: $--color-text-placeholder;
+      color: var.$color-text-placeholder;
       cursor: not-allowed;
     }
   }

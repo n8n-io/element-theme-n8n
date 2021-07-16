@@ -1,12 +1,15 @@
-@import "function";
-@import "../common/var";
+@use "sass:map";
+@use "sass:meta";
+@use "function";
+@use "../common/var";
+@use "config";
 
 /* Break-points
  -------------------------- */
-@mixin res($key, $map: $--breakpoints) {
+@mixin res($key, $map: var.$breakpoints) {
   // 循环断点Map，如果存在则返回
-  @if map-has-key($map, $key) {
-    @media only screen and #{inspect(map-get($map, $key))} {
+  @if map.has-key($map, $key) {
+    @media only screen and #{meta.inspect(map.get($map, $key))} {
       @content;
     }
   } @else {
@@ -17,8 +20,8 @@
 /* Scrollbar
  -------------------------- */
 @mixin scroll-bar {
-  $--scrollbar-thumb-background: #b4bccc;
-  $--scrollbar-track-background: #fff;
+  $scrollbar-thumb-background: #b4bccc;
+  $scrollbar-track-background: #fff;
 
   &::-webkit-scrollbar {
     z-index: 11;
@@ -31,18 +34,18 @@
     &-thumb {
       border-radius: 5px;
       width: 6px;
-      background: $--scrollbar-thumb-background;
+      background: $scrollbar-thumb-background;
     }
 
     &-corner {
-      background: $--scrollbar-track-background;
+      background: $scrollbar-track-background;
     }
 
     &-track {
-      background: $--scrollbar-track-background;
+      background: $scrollbar-track-background;
 
       &-piece {
-        background: $--scrollbar-track-background;
+        background: $scrollbar-track-background;
         width: 6px;
       }
     }
@@ -68,7 +71,7 @@
 /* BEM
  -------------------------- */
 @mixin b($block) {
-  $B: $namespace+'-'+$block !global;
+  $B: config.$namespace+'-'+$block !global;
 
   .#{$B} {
     @content;
@@ -80,10 +83,10 @@
   $selector: &;
   $currentSelector: "";
   @each $unit in $element {
-    $currentSelector: #{$currentSelector + "." + $B + $element-separator + $unit + ","};
+    $currentSelector: #{$currentSelector + "." + $B + config.$element-separator + $unit + ","};
   }
 
-  @if hitAllSpecialNestRule($selector) {
+  @if function.hitAllSpecialNestRule($selector) {
     @at-root {
       #{$selector} {
         #{$currentSelector} {
@@ -104,7 +107,7 @@
   $selector: &;
   $currentSelector: "";
   @each $unit in $modifier {
-    $currentSelector: #{$currentSelector + & + $modifier-separator + $unit + ","};
+    $currentSelector: #{$currentSelector + & + config.$modifier-separator + $unit + ","};
   }
 
   @at-root {
@@ -119,12 +122,12 @@
   $interpolation: '';
 
   @if $E-flag {
-    $interpolation: $element-separator + $E-flag;
+    $interpolation: config.$element-separator + $E-flag;
   }
 
   @at-root {
     #{$selector} {
-      .#{$B+$interpolation+$modifier-separator+$modifier} {
+      .#{$B+$interpolation+config.$modifier-separator+$modifier} {
         @content;
       }
     }
@@ -135,11 +138,11 @@
   $modifierCombo: '';
 
   @if $modifier {
-    $modifierCombo: $modifier-separator + $modifier;
+    $modifierCombo: config.$modifier-separator + $modifier;
   }
 
   @at-root {
-    #{&}#{$specSelector}.#{$block+$element-separator+$element+$modifierCombo} {
+    #{&}#{$specSelector}.#{$block+config.$element-separator+$element+$modifierCombo} {
       @content
     }
   }
@@ -150,12 +153,12 @@
   $modifierCombo: '';
 
   @if $modifier {
-    $modifierCombo: $modifier-separator + $modifier;
+    $modifierCombo: config.$modifier-separator + $modifier;
   }
 
   @at-root {
     #{$selector} {
-      .#{$block+$element-separator+$element+$modifierCombo} {
+      .#{$block+config.$element-separator+$element+$modifierCombo} {
         @content
       }
     }
@@ -164,7 +167,7 @@
 
 @mixin when($state) {
   @at-root {
-    &.#{$state-prefix + $state} {
+    &.#{config.$state-prefix + $state} {
       @content;
     }
   }

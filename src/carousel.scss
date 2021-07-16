@@ -1,51 +1,51 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(carousel) {
+@include mixins.b(carousel) {
   position: relative;
 
-  @include m(horizontal) {
+  @include mixins.m(horizontal) {
     overflow-x: hidden;
   }
 
-  @include m(vertical) {
+  @include mixins.m(vertical) {
     overflow-y: hidden;
   }
 
-  @include e(container) {
+  @include mixins.e(container) {
     position: relative;
     height: 300px;
   }
 
-  @include e(arrow) {
+  @include mixins.e(arrow) {
     border: none;
     outline: none;
     padding: 0;
     margin: 0;
-    height: $--carousel-arrow-size;
-    width: $--carousel-arrow-size;
+    height: var.$carousel-arrow-size;
+    width: var.$carousel-arrow-size;
     cursor: pointer;
     transition: .3s;
     border-radius: 50%;
-    background-color: $--carousel-arrow-background;
-    color: $--color-white;
+    background-color: var.$carousel-arrow-background;
+    color: var.$color-white;
     position: absolute;
     top: 50%;
     z-index: 10;
     transform: translateY(-50%);
     text-align: center;
-    font-size: $--carousel-arrow-font-size;
+    font-size: var.$carousel-arrow-font-size;
 
-    @include m(left) {
+    @include mixins.m(left) {
       left: 16px;
     }
 
-    @include m(right) {
+    @include mixins.m(right) {
       right: 16px;
     }
 
     &:hover {
-      background-color: $--carousel-arrow-hover-background;
+      background-color: var.$carousel-arrow-hover-background;
     }
 
     & i {
@@ -53,27 +53,27 @@
     }
   }
 
-  @include e(indicators) {
+  @include mixins.e(indicators) {
     position: absolute;
     list-style: none;
     margin: 0;
     padding: 0;
-    z-index: #{$--index-normal + 1};
+    z-index: #{var.$index-normal + 1};
 
-    @include m(horizontal) {
+    @include mixins.m(horizontal) {
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
     }
 
-    @include m(vertical) {
+    @include mixins.m(vertical) {
       right: 0;
       top: 50%;
       transform: translateY(-50%);
     }
 
-    @include m(outside) {
-      bottom: #{$--carousel-indicator-height + $--carousel-indicator-padding-vertical * 2};
+    @include mixins.m(outside) {
+      bottom: #{var.$carousel-indicator-height + var.$carousel-indicator-padding-vertical * 2};
       text-align: center;
       position: static;
       transform: none;
@@ -81,12 +81,12 @@
         opacity: 0.64;
       }
       button {
-        background-color: $--carousel-indicator-out-color;
+        background-color: var.$carousel-indicator-out-color;
         opacity: 0.24;
       }
     }
 
-    @include m(labels) {
+    @include mixins.m(labels) {
       left: 0;
       right: 0;
       transform: none;
@@ -105,7 +105,7 @@
     }
   }
 
-  @include e(indicator) {
+  @include mixins.e(indicator) {
     background-color: transparent;
     cursor: pointer;
 
@@ -113,32 +113,32 @@
       opacity: 0.72;
     }
 
-    @include m(horizontal) {
+    @include mixins.m(horizontal) {
       display: inline-block;
-      padding: $--carousel-indicator-padding-vertical $--carousel-indicator-padding-horizontal;
+      padding: var.$carousel-indicator-padding-vertical var.$carousel-indicator-padding-horizontal;
     }
 
-    @include m(vertical) {
-      padding: $--carousel-indicator-padding-horizontal $--carousel-indicator-padding-vertical;
+    @include mixins.m(vertical) {
+      padding: var.$carousel-indicator-padding-horizontal var.$carousel-indicator-padding-vertical;
       .el-carousel__button {
-        width: $--carousel-indicator-height;
-        height: #{$--carousel-indicator-width * 0.5};
+        width: var.$carousel-indicator-height;
+        height: #{var.$carousel-indicator-width * 0.5};
       }
     }
 
-    @include when(active) {
+    @include mixins.when(active) {
       button {
         opacity: 1;
       }
     }
   }
 
-  @include e(button) {
+  @include mixins.e(button) {
     display: block;
     opacity: 0.48;
-    width: $--carousel-indicator-width;
-    height: $--carousel-indicator-height;
-    background-color: $--color-white;
+    width: var.$carousel-indicator-width;
+    height: var.$carousel-indicator-height;
+    background-color: var.$color-white;
     border: none;
     outline: none;
     padding: 0;

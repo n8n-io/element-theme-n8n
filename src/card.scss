@@ -1,32 +1,32 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(card) {
-  border-radius: $--card-border-radius;
-  border: 1px solid $--card-border-color;
-  background-color: $--color-white;
+@include mixins.b(card) {
+  border-radius: var.$card-border-radius;
+  border: 1px solid var.$card-border-color;
+  background-color: var.$color-white;
   overflow: hidden;
-  color: $--color-text-primary;
+  color: var.$color-text-primary;
   transition: 0.3s;
 
-  @include when(always-shadow) {
-    box-shadow: $--box-shadow-light;
+  @include mixins.when(always-shadow) {
+    box-shadow: var.$box-shadow-light;
   }
 
-  @include when(hover-shadow) {
+  @include mixins.when(hover-shadow) {
     &:hover,
     &:focus {
-      box-shadow: $--box-shadow-light;
+      box-shadow: var.$box-shadow-light;
     }
   }
 
-  @include e(header) {
-    padding: #{$--card-padding - 2 $--card-padding};
-    border-bottom: 1px solid $--card-border-color;
+  @include mixins.e(header) {
+    padding: #{var.$card-padding - 2 var.$card-padding};
+    border-bottom: 1px solid var.$card-border-color;
     box-sizing: border-box;
   }
 
-  @include e(body) {
-    padding: $--card-padding;
+  @include mixins.e(body) {
+    padding: var.$card-padding;
   }
 }

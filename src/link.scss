@@ -1,14 +1,14 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
 $typeMap: (
-  primary: $--link-primary-font-color, 
-  danger: $--link-danger-font-color, 
-  success: $--link-success-font-color, 
-  warning: $--link-warning-font-color, 
-  info: $--link-info-font-color);
+  primary: var.$link-primary-font-color, 
+  danger: var.$link-danger-font-color, 
+  success: var.$link-success-font-color, 
+  warning: var.$link-warning-font-color, 
+  info: var.$link-info-font-color);
 
-@include b(link) {
+@include mixins.b(link) {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -19,10 +19,10 @@ $typeMap: (
   outline: none;
   cursor: pointer;
   padding: 0;
-  font-size: $--link-font-size;
-  font-weight: $--link-font-weight;
+  font-size: var.$link-font-size;
+  font-weight: var.$link-font-weight;
 
-  @include when(underline) {
+  @include mixins.when(underline) {
     &:hover:after {
       content: "";
       position: absolute;
@@ -30,11 +30,11 @@ $typeMap: (
       right: 0;
       height: 0;
       bottom: 0;
-      border-bottom: 1px solid $--link-default-active-color
+      border-bottom: 1px solid var.$link-default-active-color
     }
   }
 
-  @include when(disabled) {
+  @include mixins.when(disabled) {
     cursor: not-allowed;
   } 
 
@@ -46,15 +46,15 @@ $typeMap: (
     
     
   &.el-link--default  {
-    color: $--link-default-font-color;
+    color: var.$link-default-font-color;
     &:hover {
-      color: $--link-default-active-color
+      color: var.$link-default-active-color
     }
     &:after {
-      border-color: $--link-default-active-color
+      border-color: var.$link-default-active-color
     }
-    @include when(disabled) {
-      color: $--link-disabled-font-color
+    @include mixins.when(disabled) {
+      color: var.$link-disabled-font-color
     }
   }
 
@@ -62,15 +62,15 @@ $typeMap: (
     &.el-link--#{$type} {
       color: $primaryColor;
       &:hover {
-        color: $--color-primary-light-3
+        color: var.$color-primary-light-3
       }
       &:after {
         border-color: $primaryColor
       }
-      @include when(disabled) {
-        color: $--color-primary-light-6
+      @include mixins.when(disabled) {
+        color: var.$color-primary-light-6
       }
-      @include when(underline) {
+      @include mixins.when(underline) {
         &:hover:after {
           border-color: $primaryColor
         }

@@ -1,107 +1,107 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
 @mixin genTheme() {
-  background-color: $--color-primary-lighter;
-  border-color: $--color-primary-light-5;
-  color: $--color-primary-light-1;
+  background-color: var.$color-primary-lighter;
+  border-color: var.$color-primary-light-5;
+  color: var.$color-primary-light-1;
 
-  @include when(hit) {
-    border-color: $--tag-primary-color;
+  @include mixins.when(hit) {
+    border-color: var.$tag-primary-color;
   }
 
   .el-tag__close {
-    color: $--color-primary-light-1;
+    color: var.$color-primary-light-1;
     &:hover {
-      color: $--color-white;
-      background-color: $--color-primary-light-1;
+      color: var.$color-white;
+      background-color: var.$color-primary-light-1;
     }
   }
 
   &.el-tag--info {
-    background-color: $--color-info-lighter;
-    border-color: $--color-info-light-5;
-    color: $--color-info-light-3;
+    background-color: var.$color-info-lighter;
+    border-color: var.$color-info-light-5;
+    color: var.$color-info-light-3;
 
-    @include when(hit) {
-      border-color: $--tag-info-color;
+    @include mixins.when(hit) {
+      border-color: var.$tag-info-color;
     }
 
     .el-tag__close {
-      color: $--color-info-light-1;
+      color: var.$color-info-light-1;
       &:hover {
-        color: $--color-white;
-        background-color: $--color-info-light-1;
+        color: var.$color-white;
+        background-color: var.$color-info-light-1;
       }
     }
   }
 
   &.el-tag--success {
-    background-color: $--color-success-lighter;
-    border-color: $--color-success-light-5;
-    color: $--color-success-light-3;
+    background-color: var.$color-success-lighter;
+    border-color: var.$color-success-light-5;
+    color: var.$color-success-light-3;
 
-    @include when(hit) {
-      border-color: $--tag-success-color;
+    @include mixins.when(hit) {
+      border-color: var.$tag-success-color;
     }
 
     .el-tag__close {
-      color: $--color-success-light-1;
+      color: var.$color-success-light-1;
       &:hover {
-        color: $--color-white;
-        background-color: $--color-success-light-1;
+        color: var.$color-white;
+        background-color: var.$color-success-light-1;
       }
     }
   }
 
   &.el-tag--warning {
-    background-color: $--color-warning-lighter;
-    border-color: $--color-warning-light-5;
-    color: $--color-warning-light-3;
+    background-color: var.$color-warning-lighter;
+    border-color: var.$color-warning-light-5;
+    color: var.$color-warning-light-3;
 
-    @include when(hit) {
-      border-color: $--tag-warning-color;
+    @include mixins.when(hit) {
+      border-color: var.$tag-warning-color;
     }
 
     .el-tag__close {
-      color: $--color-warning-light-1;
+      color: var.$color-warning-light-1;
       &:hover {
-        color: $--color-white;
-        background-color: $--color-warning-light-1;
+        color: var.$color-white;
+        background-color: var.$color-warning-light-1;
       }
     }
   }
 
   &.el-tag--danger {
-    background-color: $--color-danger-lighter;
-    border-color: $--color-danger-light-5;
-    color: $--color-danger-light-3;
+    background-color: var.$color-danger-lighter;
+    border-color: var.$color-danger-light-5;
+    color: var.$color-danger-light-3;
 
-    @include when(hit) {
-      border-color: $--tag-danger-color;
+    @include mixins.when(hit) {
+      border-color: var.$tag-danger-color;
     }
 
     .el-tag__close {
-      color: $--color-danger-light-1;
+      color: var.$color-danger-light-1;
       &:hover {
-        color: $--color-white;
-        background-color: $--color-danger-light-1;
+        color: var.$color-white;
+        background-color: var.$color-danger-light-1;
       }
     }
   }
 }
 
-@include b(tag) {
+@include mixins.b(tag) {
   @include genTheme();
   display: inline-block;
   height: 32px;
-  padding: $--tag-padding;
+  padding: var.$tag-padding;
   line-height: 30px;
-  font-size: $--tag-font-size;
-  color: $--tag-primary-color;
+  font-size: var.$tag-font-size;
+  color: var.$tag-primary-color;
   border-width: 1px;
   border-style: solid;
-  border-radius: $--tag-border-radius;
+  border-radius: var.$tag-border-radius;
   box-sizing: border-box;
   white-space: nowrap;
 
@@ -123,15 +123,15 @@
     }
   }
 
-  @include m(dark) {
+  @include mixins.m(dark) {
     @include genTheme();
   }
 
-  @include m(plain) {
+  @include mixins.m(plain) {
     @include genTheme();
   }
 
-  @include m(medium) {
+  @include mixins.m(medium) {
     height: 28px;
     line-height: 26px;
 
@@ -140,7 +140,7 @@
     }
   }
 
-  @include m(small) {
+  @include mixins.m(small) {
     height: 24px;
     padding: 0 8px;
     line-height: 22px;
@@ -150,7 +150,7 @@
     }
   }
 
-  @include m(mini) {
+  @include mixins.m(mini) {
     height: 20px;
     padding: 0 5px;
     line-height: 19px;

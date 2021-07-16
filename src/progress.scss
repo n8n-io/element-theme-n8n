@@ -1,14 +1,14 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "./common/var";
+@use "mixins/mixins";
+@use "mixins/utils";
+@use "./common/var";
 
-@include b(progress) {
+@include mixins.b(progress) {
   position: relative;
   line-height: 1;
 
-  @include e(text) {
+  @include mixins.e(text) {
     font-size:14px;
-    color: $--color-text-regular;
+    color: var.$color-text-regular;
     display: inline-block;
     vertical-align: middle;
     margin-left: 10px;
@@ -20,7 +20,7 @@
     }
   }
 
-  @include m((circle,dashboard)) {
+  @include mixins.m((circle,dashboard)) {
     display: inline-block;
 
     .el-progress__text {
@@ -40,7 +40,7 @@
   }
 
 
-  @include m(without-text) {
+  @include mixins.m(without-text) {
     .el-progress__text {
       display: none;
     }
@@ -52,45 +52,45 @@
     }
   }
 
-  @include m(text-inside) {
+  @include mixins.m(text-inside) {
     .el-progress-bar {
       padding-right: 0;
       margin-right: 0;
     }
   }
 
-  @include when(success) {
+  @include mixins.when(success) {
     .el-progress-bar__inner {
-      background-color: $--color-success;
+      background-color: var.$color-success;
     }
 
     .el-progress__text {
-      color: $--color-success;
+      color: var.$color-success;
     }
   }
 
-  @include when(warning) {
+  @include mixins.when(warning) {
     .el-progress-bar__inner {
-      background-color: $--color-warning;
+      background-color: var.$color-warning;
     }
 
     .el-progress__text {
-      color: $--color-warning;
+      color: var.$color-warning;
     }
   }
 
-  @include when(exception) {
+  @include mixins.when(exception) {
     .el-progress-bar__inner {
-      background-color: $--color-danger;
+      background-color: var.$color-danger;
     }
 
     .el-progress__text {
-      color: $--color-danger;
+      color: var.$color-danger;
     }
   }
 }
 
-@include b(progress-bar) {
+@include mixins.b(progress-bar) {
   padding-right: 50px;
   display: inline-block;
   vertical-align: middle;
@@ -98,33 +98,33 @@
   margin-right: -55px;
   box-sizing: border-box;
 
-  @include e(outer) {
+  @include mixins.e(outer) {
     height: 6px;
     border-radius: 100px;
-    background-color: $--border-color-lighter;
+    background-color: var.$border-color-lighter;
     overflow: hidden;
     position: relative;
     vertical-align: middle;
   }
-  @include e(inner) {
+  @include mixins.e(inner) {
     position: absolute;
     left: 0;
     top: 0;
     height: 100%;
-    background-color: $--color-primary;
+    background-color: var.$color-primary;
     text-align: right;
     border-radius: 100px;
     line-height: 1;
     white-space: nowrap;
     transition: width 0.6s ease;
 
-    @include utils-vertical-center;
+    @include utils.utils-vertical-center;
   }
 
-  @include e(innerText) {
+  @include mixins.e(innerText) {
     display: inline-block;
     vertical-align: middle;
-    color: $--color-white;
+    color: var.$color-white;
     font-size: 12px;
     margin: 0 5px;
   }

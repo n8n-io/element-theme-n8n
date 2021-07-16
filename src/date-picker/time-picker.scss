@@ -1,19 +1,20 @@
-@import "../common/var";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(time-panel) {
+@include mixins.b(time-panel) {
   margin: 5px 0;
-  border: solid 1px $--datepicker-border-color;
-  background-color: $--color-white;
-  box-shadow: $--box-shadow-light;
+  border: solid 1px var.$datepicker-border-color;
+  background-color: var.$color-white;
+  box-shadow: var.$box-shadow-light;
   border-radius: 2px;
   position: absolute;
   width: 180px;
   left: 0;
-  z-index: $--index-top;
+  z-index: var.$index-top;
   user-select: none;
   box-sizing: content-box;
 
-  @include e(content) {
+  @include mixins.e(content) {
     font-size: 0;
     position: relative;
     overflow: hidden;
@@ -30,8 +31,8 @@
       box-sizing: border-box;
       padding-top: 6px;
       text-align: left;
-      border-top: 1px solid $--border-color-light;
-      border-bottom: 1px solid $--border-color-light;
+      border-top: 1px solid var.$border-color-light;
+      border-bottom: 1px solid var.$border-color-light;
     }
 
     &::after {
@@ -57,8 +58,8 @@
     }
   }
 
-  @include e(footer) {
-    border-top: 1px solid $--datepicker-inner-border-color;
+  @include mixins.e(footer) {
+    border-top: 1px solid var.$datepicker-inner-border-color;
     padding: 4px;
     height: 36px;
     line-height: 25px;
@@ -66,7 +67,7 @@
     box-sizing: border-box;
   }
 
-  @include e(btn) {
+  @include mixins.e(btn) {
     border: none;
     line-height: 28px;
     padding: 0 5px;
@@ -75,11 +76,11 @@
     background-color: transparent;
     outline: none;
     font-size: 12px;
-    color: $--color-text-primary;
+    color: var.$color-text-primary;
 
     &.confirm {
       font-weight: 800;
-      color: $--datepicker-active-color;
+      color: var.$datepicker-active-color;
     }
   }
 }

@@ -1,15 +1,15 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(popconfirm) {
-  @include e(main) {
+@include mixins.b(popconfirm) {
+  @include mixins.e(main) {
     display: flex;
     align-items: center;
   }
-  @include e(icon) {
+  @include mixins.e(icon) {
     margin-right: 5px;
   }
-  @include e(action) {
+  @include mixins.e(action) {
     text-align: right; 
     margin: 0
   }

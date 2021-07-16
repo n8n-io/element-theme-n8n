@@ -1,42 +1,42 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "./common/var";
-@import "input";
-@import "button";
-@import "checkbox";
-@import "checkbox-group";
+@use "mixins/mixins";
+@use "mixins/utils";
+@use "./common/var";
+@use "input";
+@use "button";
+@use "checkbox";
+@use "checkbox-group";
 
-@include b(transfer) {
-  font-size: $--font-size-base;
+@include mixins.b(transfer) {
+  font-size: var.$font-size-base;
 
-  @include e(buttons) {
+  @include mixins.e(buttons) {
     display: inline-block;
     vertical-align: middle;
     padding: 0 30px;
   }
 
-  @include e(button) {
+  @include mixins.e(button) {
     display: block;
     margin: 0 auto;
     padding: 10px;
     border-radius: 50%;
-    color: $--color-white;
-    background-color: $--color-primary;
+    color: var.$color-white;
+    background-color: var.$color-primary;
     font-size: 0;
 
-    @include when(with-texts) {
-      border-radius: $--border-radius-base;
+    @include mixins.when(with-texts) {
+      border-radius: var.$border-radius-base;
     }
 
-    @include when(disabled) {
-      border: $--border-base;
-      background-color: $--background-color-base;
-      color: $--color-text-placeholder;
+    @include mixins.when(disabled) {
+      border: var.$border-base;
+      background-color: var.$background-color-base;
+      color: var.$color-text-placeholder;
 
       &:hover {
-        border: $--border-base;
-        background-color: $--background-color-base;
-        color: $--color-text-placeholder;
+        border: var.$border-base;
+        background-color: var.$background-color-base;
+        color: var.$color-text-placeholder;
       }
     }
 
@@ -58,43 +58,43 @@
   }
 }
 
-@include b(transfer-panel) {
-  border: 1px solid $--transfer-border-color;
-  border-radius: $--transfer-border-radius;
+@include mixins.b(transfer-panel) {
+  border: 1px solid var.$transfer-border-color;
+  border-radius: var.$transfer-border-radius;
   overflow: hidden;
-  background: $--color-white;
+  background: var.$color-white;
   display: inline-block;
   vertical-align: middle;
-  width: $--transfer-panel-width;
+  width: var.$transfer-panel-width;
   max-height: 100%;
   box-sizing: border-box;
   position: relative;
 
-  @include e(body) {
-    height: $--transfer-panel-body-height;
+  @include mixins.e(body) {
+    height: var.$transfer-panel-body-height;
 
-    @include when(with-footer) {
-      padding-bottom: $--transfer-panel-footer-height;
+    @include mixins.when(with-footer) {
+      padding-bottom: var.$transfer-panel-footer-height;
     }
   }
 
-  @include e(list) {
+  @include mixins.e(list) {
     margin: 0;
     padding: 6px 0;
     list-style: none;
-    height: $--transfer-panel-body-height;
+    height: var.$transfer-panel-body-height;
     overflow: auto;
     box-sizing: border-box;
 
-    @include when(filterable) {
-      height: #{$--transfer-panel-body-height - $--transfer-filter-height - 20px};
+    @include mixins.when(filterable) {
+      height: #{var.$transfer-panel-body-height - var.$transfer-filter-height - 20px};
       padding-top: 0;
     }
   }
 
-  @include e(item) {
-    height: $--transfer-item-height;
-    line-height: $--transfer-item-height;
+  @include mixins.e(item) {
+    height: var.$transfer-item-height;
+    line-height: var.$transfer-item-height;
     padding-left: 15px;
     display: block !important;
 
@@ -103,20 +103,20 @@
     }
 
     &.el-checkbox {
-      color: $--color-text-regular;
+      color: var.$color-text-regular;
     }
 
     &:hover {
-      color: $--color-primary;
+      color: var.$color-primary;
     }
 
     &.el-checkbox .el-checkbox__label {
       width: 100%;
-      @include utils-ellipsis;
+      @include utils.utils-ellipsis;
       display: block;
       box-sizing: border-box;
       padding-left: 24px;
-      line-height: $--transfer-item-height;
+      line-height: var.$transfer-item-height;
     }
 
     .el-checkbox__input {
@@ -125,7 +125,7 @@
     }
   }
 
-  @include e(filter) {
+  @include mixins.e(filter) {
     text-align: center;
     margin: 15px;
     box-sizing: border-box;
@@ -133,12 +133,12 @@
     width: auto;
 
     .el-input__inner {
-      height: $--transfer-filter-height;
+      height: var.$transfer-filter-height;
       width: 100%;
       font-size: 12px;
       display: inline-block;
       box-sizing: border-box;
-      border-radius: #{$--transfer-filter-height * 0.5};
+      border-radius: #{var.$transfer-filter-height * 0.5};
       padding-right: 10px;
       padding-left: 30px;
     }
@@ -153,14 +153,14 @@
   }
 
   .el-transfer-panel__header {
-    height: $--transfer-panel-header-height;
-    line-height: $--transfer-panel-header-height;
-    background: $--transfer-panel-header-background-color;
+    height: var.$transfer-panel-header-height;
+    line-height: var.$transfer-panel-header-height;
+    background: var.$transfer-panel-header-background-color;
     margin: 0;
     padding-left: 15px;
-    border-bottom: 1px solid $--transfer-border-color;
+    border-bottom: 1px solid var.$transfer-border-color;
     box-sizing: border-box;
-    color: $--color-black;
+    color: var.$color-black;
 
     .el-checkbox {
       display: block;
@@ -168,13 +168,13 @@
 
       .el-checkbox__label {
         font-size: 16px;
-        color: $--color-text-primary;
+        color: var.$color-text-primary;
         font-weight: normal;
 
         span {
           position: absolute;
           right: 15px;
-          color: $--color-text-secondary;
+          color: var.$color-text-secondary;
           font-size: 12px;
           font-weight: normal;
         }
@@ -183,30 +183,30 @@
   }
 
   .el-transfer-panel__footer {
-    height: $--transfer-panel-footer-height;
-    background: $--color-white;
+    height: var.$transfer-panel-footer-height;
+    background: var.$color-white;
     margin: 0;
     padding: 0;
-    border-top: 1px solid $--transfer-border-color;
+    border-top: 1px solid var.$transfer-border-color;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-    z-index: $--index-normal;
-    @include utils-vertical-center;
+    z-index: var.$index-normal;
+    @include utils.utils-vertical-center;
 
     .el-checkbox {
       padding-left: 20px;
-      color: $--color-text-regular;
+      color: var.$color-text-regular;
     }
   }
 
   .el-transfer-panel__empty {
     margin: 0;
-    height: $--transfer-item-height;
-    line-height: $--transfer-item-height;
+    height: var.$transfer-item-height;
+    line-height: var.$transfer-item-height;
     padding: 6px 15px 0;
-    color: $--color-text-secondary;
+    color: var.$color-text-secondary;
     text-align: center;
   }
 

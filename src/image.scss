@@ -1,21 +1,21 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
 %size {
   width: 100%;
   height: 100%;
 }
 
-@include b(image) {
+@include mixins.b(image) {
   position: relative;
   display: inline-block;
   overflow: hidden;
 
-  @include e(inner) {
+  @include mixins.e(inner) {
     @extend %size;
     vertical-align: top;
 
-    @include m(center) {
+    @include mixins.m(center) {
       position: relative;
       top: 50%;
       left: 50%;
@@ -24,32 +24,32 @@
     }
   }
 
-  @include e(placeholder) {
+  @include mixins.e(placeholder) {
     @extend %size;
-    background: $--background-color-base;
+    background: var.$background-color-base;
   }
 
-  @include e(error) {
+  @include mixins.e(error) {
     @extend %size;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 14px;
-    background: $--background-color-base;
-    color: $--color-text-placeholder;
+    background: var.$background-color-base;
+    color: var.$color-text-placeholder;
     vertical-align: middle;
   }
 
-  @include e(preview) {
+  @include mixins.e(preview) {
     cursor: pointer;
   }
 }
 
 
-@include b(image-viewer) {
+@include mixins.b(image-viewer) {
 
 
-  @include e(wrapper) {
+  @include mixins.e(wrapper) {
     position: fixed;
     top: 0;
     right: 0;
@@ -57,7 +57,7 @@
     left: 0;
   }
 
-  @include e(btn) {
+  @include mixins.e(btn) {
     position: absolute;
     z-index: 1;
     display: flex;
@@ -70,7 +70,7 @@
     user-select: none;
   }
 
-  @include e(close) {
+  @include mixins.e(close) {
     top: 40px;
     right: 40px;
     width: 40px;
@@ -80,7 +80,7 @@
     background-color: #606266;
   }
 
-  @include e(canvas) {
+  @include mixins.e(canvas) {
     width: 100%;
     height: 100%;
     display: flex;
@@ -88,7 +88,7 @@
     align-items: center;
   }
 
-  @include e(actions) {
+  @include mixins.e(actions) {
     left: 50%;
     bottom: 30px;
     transform: translateX(-50%);
@@ -99,7 +99,7 @@
     border-color: #fff;
     border-radius: 22px;
 
-    @include e(actions__inner) {
+    @include mixins.e(actions__inner) {
       width: 100%;
       height: 100%;
       text-align: justify;
@@ -112,7 +112,7 @@
     }
   }
 
-  @include e(prev){
+  @include mixins.e(prev){
     top: 50%;
     transform: translateY(-50%);
     width: 44px;
@@ -124,7 +124,7 @@
     left: 40px;
   }
 
-  @include e(next){
+  @include mixins.e(next){
     top: 50%;
     transform: translateY(-50%);
     width: 44px;
@@ -137,7 +137,7 @@
     text-indent: 2px;
   }
 
-  @include e(mask) {
+  @include mixins.e(mask) {
     position: absolute;
     width: 100%;
     height: 100%;

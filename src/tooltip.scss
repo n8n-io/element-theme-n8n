@@ -1,16 +1,16 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(tooltip) {
+@include mixins.b(tooltip) {
   &:focus:not(.focusing), &:focus:hover {
     outline-width: 0;
   }
-  @include e(popper) {
+  @include mixins.e(popper) {
     position: absolute;
     border-radius: 4px;
-    padding: $--tooltip-padding;
-    z-index: $--index-popper;
-    font-size: $--tooltip-font-size;
+    padding: var.$tooltip-padding;
+    z-index: var.$index-popper;
+    font-size: var.$tooltip-font-size;
     line-height: 1.2;
     min-width: 10px;
     word-wrap: break-word;
@@ -26,7 +26,7 @@
     }
 
     .popper__arrow {
-      border-width: $--tooltip-arrow-size;
+      border-width: var.$tooltip-arrow-size;
     }
 
     .popper__arrow::after {
@@ -35,105 +35,105 @@
     }
 
     &[x-placement^="top"] {
-      margin-bottom: #{$--tooltip-arrow-size + 6px};
+      margin-bottom: #{var.$tooltip-arrow-size + 6px};
     }
 
     &[x-placement^="top"] .popper__arrow {
-      bottom: -$--tooltip-arrow-size;
-      border-top-color: $--tooltip-border-color;
+      bottom: -(var.$tooltip-arrow-size);
+      border-top-color: var.$tooltip-border-color;
       border-bottom-width: 0;
 
       &::after {
         bottom: 1px;
         margin-left: -5px;
-        border-top-color: $--tooltip-fill;
+        border-top-color: var.$tooltip-fill;
         border-bottom-width: 0;
       }
     }
 
     &[x-placement^="bottom"] {
-      margin-top: #{$--tooltip-arrow-size + 6px};
+      margin-top: #{var.$tooltip-arrow-size + 6px};
     }
 
     &[x-placement^="bottom"] .popper__arrow {
-      top: -$--tooltip-arrow-size;
+      top: -(var.$tooltip-arrow-size);
       border-top-width: 0;
-      border-bottom-color: $--tooltip-border-color;
+      border-bottom-color: var.$tooltip-border-color;
 
       &::after {
         top: 1px;
         margin-left: -5px;
         border-top-width: 0;
-        border-bottom-color: $--tooltip-fill;
+        border-bottom-color: var.$tooltip-fill;
       }
     }
 
     &[x-placement^="right"] {
-      margin-left: #{$--tooltip-arrow-size + 6px};
+      margin-left: #{var.$tooltip-arrow-size + 6px};
     }
 
     &[x-placement^="right"] .popper__arrow {
-      left: -$--tooltip-arrow-size;
-      border-right-color: $--tooltip-border-color;
+      left: -(var.$tooltip-arrow-size);
+      border-right-color: var.$tooltip-border-color;
       border-left-width: 0;
 
       &::after {
         bottom: -5px;
         left: 1px;
-        border-right-color: $--tooltip-fill;
+        border-right-color: var.$tooltip-fill;
         border-left-width: 0;
       }
     }
 
     &[x-placement^="left"] {
-      margin-right: #{$--tooltip-arrow-size + 6px};
+      margin-right: #{var.$tooltip-arrow-size + 6px};
     }
 
     &[x-placement^="left"] .popper__arrow {
-      right: -$--tooltip-arrow-size;
+      right: -(var.$tooltip-arrow-size);
       border-right-width: 0;
-      border-left-color: $--tooltip-border-color;
+      border-left-color: var.$tooltip-border-color;
 
       &::after {
         right: 1px;
         bottom: -5px;
         margin-left: -5px;
         border-right-width: 0;
-        border-left-color: $--tooltip-fill;
+        border-left-color: var.$tooltip-fill;
       }
     }
 
-    @include when(dark) {
-      background: $--tooltip-fill;
-      color: $--tooltip-color;
+    @include mixins.when(dark) {
+      background: var.$tooltip-fill;
+      color: var.$tooltip-color;
     }
 
-    @include when(light) {
-      background: $--tooltip-color;
-      border: 1px solid $--tooltip-fill;
+    @include mixins.when(light) {
+      background: var.$tooltip-color;
+      border: 1px solid var.$tooltip-fill;
 
       &[x-placement^="top"] .popper__arrow {
-        border-top-color: $--tooltip-fill;
+        border-top-color: var.$tooltip-fill;
         &::after {
-          border-top-color: $--tooltip-color;
+          border-top-color: var.$tooltip-color;
         }
       }
       &[x-placement^="bottom"] .popper__arrow {
-        border-bottom-color: $--tooltip-fill;
+        border-bottom-color: var.$tooltip-fill;
         &::after {
-          border-bottom-color: $--tooltip-color;
+          border-bottom-color: var.$tooltip-color;
         }
       }
       &[x-placement^="left"] .popper__arrow {
-        border-left-color: $--tooltip-fill;
+        border-left-color: var.$tooltip-fill;
         &::after {
-          border-left-color: $--tooltip-color;
+          border-left-color: var.$tooltip-color;
         }
       }
       &[x-placement^="right"] .popper__arrow {
-        border-right-color: $--tooltip-fill;
+        border-right-color: var.$tooltip-fill;
         &::after {
-          border-right-color: $--tooltip-color;
+          border-right-color: var.$tooltip-color;
         }
       }
     }

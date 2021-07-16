@@ -1,24 +1,24 @@
-@import "mixins/mixins";
-@import "./common/var";
-@import "common/popup";
-@import "button";
-@import "input";
+@use "mixins/mixins";
+@use "./common/var";
+@use "common/popup";
+@use "button";
+@use "input";
 
-@include b(message-box) {
+@include mixins.b(message-box) {
   display: inline-block;
-  width: $--msgbox-width;
+  width: var.$msgbox-width;
   padding-bottom: 10px;
   vertical-align: middle;
-  background-color: $--color-white;
-  border-radius: $--msgbox-border-radius;
-  border: 1px solid $--border-color-lighter;
-  font-size: $--messagebox-font-size;
-  box-shadow: $--box-shadow-light;
+  background-color: var.$color-white;
+  border-radius: var.$msgbox-border-radius;
+  border: 1px solid var.$border-color-lighter;
+  font-size: var.$messagebox-font-size;
+  box-shadow: var.$box-shadow-light;
   text-align: left;
   overflow: hidden;
   backface-visibility: hidden;
 
-  @include e(wrapper) {
+  @include mixins.e(wrapper) {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -35,65 +35,65 @@
     }
   }
 
-  @include e(header) {
+  @include mixins.e(header) {
     position: relative;
-    padding: $--msgbox-padding-primary;
+    padding: var.$msgbox-padding-primary;
     padding-bottom: 10px;
   }
 
-  @include e(title) {
+  @include mixins.e(title) {
     padding-left: 0;
     margin-bottom: 0;
-    font-size: $--messagebox-font-size;
+    font-size: var.$messagebox-font-size;
     line-height: 1;
-    color: $--messagebox-title-color;
+    color: var.$messagebox-title-color;
   }
 
-  @include e(headerbtn) {
+  @include mixins.e(headerbtn) {
     position: absolute;
-    top: $--msgbox-padding-primary;
-    right: $--msgbox-padding-primary;
+    top: var.$msgbox-padding-primary;
+    right: var.$msgbox-padding-primary;
     padding: 0;
     border: none;
     outline: none;
     background: transparent;
-    font-size: $--message-close-size;
+    font-size: var.$message-close-size;
     cursor: pointer;
 
     .el-message-box__close {
-      color: $--color-info;
+      color: var.$color-info;
     }
 
     &:focus, &:hover {
       .el-message-box__close {
-        color: $--color-primary;
+        color: var.$color-primary;
       }
     }
 
   }
 
-  @include e(content) {
-    padding: 10px $--msgbox-padding-primary;
-    color: $--messagebox-content-color;
-    font-size: $--messagebox-content-font-size;
+  @include mixins.e(content) {
+    padding: 10px var.$msgbox-padding-primary;
+    color: var.$messagebox-content-color;
+    font-size: var.$messagebox-content-font-size;
   }
   
-  @include e(container) {
+  @include mixins.e(container) {
     position: relative;
   }
 
-  @include e(input) {
+  @include mixins.e(input) {
     padding-top: 15px;
 
     & input.invalid {
-      border-color: $--color-danger;
+      border-color: var.$color-danger;
       &:focus {
-        border-color: $--color-danger;
+        border-color: var.$color-danger;
       }
     }
   }
 
-  @include e(status) {
+  @include mixins.e(status) {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -110,23 +110,23 @@
     }
 
     &.el-icon-success {
-      color: $--messagebox-success-color;
+      color: var.$messagebox-success-color;
     }
 
     &.el-icon-info {
-      color: $--messagebox-info-color;
+      color: var.$messagebox-info-color;
     }
 
     &.el-icon-warning {
-      color: $--messagebox-warning-color;
+      color: var.$messagebox-warning-color;
     }
 
     &.el-icon-error {
-      color: $--messagebox-danger-color;
+      color: var.$messagebox-danger-color;
     }
   }
 
-  @include e(message) {
+  @include mixins.e(message) {
     margin: 0;
 
     & p {
@@ -135,14 +135,14 @@
     }
   }
 
-  @include e(errormsg) {
-    color: $--color-danger;
-    font-size: $--messagebox-error-font-size;
+  @include mixins.e(errormsg) {
+    color: var.$color-danger;
+    font-size: var.$messagebox-error-font-size;
     min-height: 18px;
     margin-top: 2px;
   }
 
-  @include e(btns) {
+  @include mixins.e(btns) {
     padding: 5px 15px 0;
     text-align: right;
 
@@ -151,26 +151,26 @@
     }
   }
 
-  @include e(btns-reverse) {
+  @include mixins.e(btns-reverse) {
     flex-direction: row-reverse;
   }
 
   // centerAlign 布局
-  @include m(center) {
+  @include mixins.m(center) {
     padding-bottom: 30px;
 
-    @include e(header) {
+    @include mixins.e(header) {
       padding-top: 30px;
     }
 
-    @include e(title) {
+    @include mixins.e(title) {
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    @include e(status) {
+    @include mixins.e(status) {
       position: relative;
       top: auto;
       padding-right: 5px;
@@ -178,16 +178,16 @@
       transform: translateY(-1px);
     }
 
-    @include e(message) {
+    @include mixins.e(message) {
       margin-left: 0;
     }
 
-    @include e((btns, content)) {
+    @include mixins.e((btns, content)) {
       text-align: center;
     }
 
-    @include e(content) {
-      $padding-horizontal: $--msgbox-padding-primary + 12px;
+    @include mixins.e(content) {
+      $padding-horizontal: var.$msgbox-padding-primary + 12px;
 
       padding-left: $padding-horizontal;
       padding-right: $padding-horizontal;

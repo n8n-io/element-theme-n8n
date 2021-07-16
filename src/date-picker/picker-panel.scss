@@ -1,15 +1,16 @@
-@import "../common/var";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(picker-panel) {
-  color: $--color-text-regular;
-  border: 1px solid $--datepicker-border-color;
-  box-shadow: $--box-shadow-light;
-  background: $--color-white;
-  border-radius: $--border-radius-base;
+@include mixins.b(picker-panel) {
+  color: var.$color-text-regular;
+  border: 1px solid var.$datepicker-border-color;
+  box-shadow: var.$box-shadow-light;
+  background: var.$color-white;
+  border-radius: var.$border-radius-base;
   line-height: 30px;
   margin: 5px 0;
 
-  @include e((body, body-wrapper)) {
+  @include mixins.e((body, body-wrapper)) {
     &::after {
       content: "";
       display: table;
@@ -17,44 +18,44 @@
     }
   }
 
-  @include e(content) {
+  @include mixins.e(content) {
     position: relative;
     margin: 15px;
   }
 
-  @include e(footer) {
-    border-top: 1px solid $--datepicker-inner-border-color;
+  @include mixins.e(footer) {
+    border-top: 1px solid var.$datepicker-inner-border-color;
     padding: 4px;
     text-align: right;
-    background-color: $--color-white;
+    background-color: var.$color-white;
     position: relative;
     font-size: 0;
   }
 
-  @include e(shortcut) {
+  @include mixins.e(shortcut) {
     display: block;
     width: 100%;
     border: 0;
     background-color: transparent;
     line-height: 28px;
     font-size: 14px;
-    color: $--datepicker-font-color;
+    color: var.$datepicker-font-color;
     padding-left: 12px;
     text-align: left;
     outline: none;
     cursor: pointer;
 
     &:hover {
-      color: $--datepicker-hover-font-color;
+      color: var.$datepicker-hover-font-color;
     }
 
     &.active {
       background-color: #e6f1fe;
-      color: $--datepicker-active-color;
+      color: var.$datepicker-active-color;
     }
   }
 
-  @include e(btn) {
+  @include mixins.e(btn) {
     border: 1px solid #dcdcdc;
     color: #333;
     line-height: 24px;
@@ -71,9 +72,9 @@
     }
   }
 
-  @include e(icon-btn) {
+  @include mixins.e(icon-btn) {
     font-size: 12px;
-    color: $--datepicker-icon-color;
+    color: var.$datepicker-icon-color;
     border: 0;
     background: transparent;
     cursor: pointer;
@@ -81,11 +82,11 @@
     margin-top: 8px;
 
     &:hover {
-      color: $--datepicker-hover-font-color;
+      color: var.$datepicker-hover-font-color;
     }
 
-    @include when(disabled) {
-      color: $--font-color-disabled-base;
+    @include mixins.when(disabled) {
+      color: var.$font-color-disabled-base;
 
       &:hover {
         cursor: not-allowed;
@@ -93,7 +94,7 @@
     }
   }
 
-  @include e(link-btn) {
+  @include mixins.e(link-btn) {
     vertical-align: middle;
   }
 }
@@ -104,10 +105,10 @@
   top: 0;
   bottom: 0;
   width: 110px;
-  border-right: 1px solid $--datepicker-inner-border-color;
+  border-right: 1px solid var.$datepicker-inner-border-color;
   box-sizing: border-box;
   padding-top: 6px;
-  background-color: $--color-white;
+  background-color: var.$color-white;
   overflow: auto;
 }
 

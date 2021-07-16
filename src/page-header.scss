@@ -1,11 +1,11 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(page-header) {
+@include mixins.b(page-header) {
   display: flex;
   line-height: 24px;
 
-  @include e(left) {
+  @include mixins.e(left) {
     display: flex;
     cursor: pointer;
     margin-right: 40px;
@@ -19,7 +19,7 @@
       right: -20px;
       top: 50%;
       transform: translateY(-50%);
-      background-color: $--border-color-base;
+      background-color: var.$border-color-base;
     }
 
     .el-icon-back {
@@ -28,14 +28,14 @@
       align-self: center;
     }
 
-    @include e(title) {
+    @include mixins.e(title) {
       font-size: 14px;
       font-weight: 500;
     }
   }
 
-  @include e(content) {
+  @include mixins.e(content) {
     font-size: 18px;
-    color: $--color-text-primary;
+    color: var.$color-text-primary;
   }
 }

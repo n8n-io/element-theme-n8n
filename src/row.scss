@@ -1,36 +1,36 @@
-@import "./common/var";
-@import "mixins/mixins";
-@import "mixins/utils";
+@use "./common/var";
+@use "mixins/mixins";
+@use "mixins/utils";
 
-@include b(row) {
+@include mixins.b(row) {
   position: relative;
   box-sizing: border-box;
-  @include utils-clearfix;
+  @include utils.utils-clearfix;
 
-  @include m(flex) {
+  @include mixins.m(flex) {
     display: flex;
     &:before,
     &:after {
       display: none;
     }
 
-    @include when(justify-center) {
+    @include mixins.when(justify-center) {
       justify-content: center;
     }
-    @include when(justify-end) {
+    @include mixins.when(justify-end) {
       justify-content: flex-end;
     }
-    @include when(justify-space-between) {
+    @include mixins.when(justify-space-between) {
       justify-content: space-between;
     }
-    @include when(justify-space-around) {
+    @include mixins.when(justify-space-around) {
       justify-content: space-around;
     }
 
-    @include when(align-middle) {
+    @include mixins.when(align-middle) {
       align-items: center;
     }
-    @include when(align-bottom) {
+    @include mixins.when(align-bottom) {
       align-items: flex-end;
     }
   }

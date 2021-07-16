@@ -1,22 +1,22 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "./common/var";
-@import "select";
+@use "mixins/mixins";
+@use "mixins/utils";
+@use "./common/var";
+@use "select";
 
-@include b(pagination) {
+@include mixins.b(pagination) {
   white-space: nowrap;
   padding: 2px 5px;
-  color: $--pagination-font-color;
+  color: var.$pagination-font-color;
   font-weight: bold;
-  @include utils-clearfix;
+  @include utils.utils-clearfix;
 
   span:not([class*=suffix]),
   button {
     display: inline-block;
-    font-size: $--pagination-font-size;
-    min-width: $--pagination-button-width;
-    height: $--pagination-button-height;
-    line-height: $--pagination-button-height;
+    font-size: var.$pagination-font-size;
+    min-width: var.$pagination-button-width;
+    height: var.$pagination-button-height;
+    line-height: var.$pagination-button-height;
     vertical-align: top;
     box-sizing: border-box;
   }
@@ -39,7 +39,7 @@
 
     .el-input__inner {
       padding-right: 25px;
-      border-radius: $--pagination-border-radius;
+      border-radius: var.$pagination-border-radius;
     }
   }
 
@@ -53,12 +53,12 @@
     }
 
     &:hover {
-      color: $--pagination-hover-color;
+      color: var.$pagination-hover-color;
     }
 
     &:disabled {
-      color: $--pagination-button-disabled-color;
-      background-color: $--pagination-button-disabled-background-color;
+      color: var.$pagination-button-disabled-color;
+      background-color: var.$pagination-button-disabled-background-color;
       cursor: not-allowed;
     }
   }
@@ -67,10 +67,10 @@
   .btn-next {
     background: center center no-repeat;
     background-size: 16px;
-    background-color: $--pagination-background-color;
+    background-color: var.$pagination-background-color;
     cursor: pointer;
     margin: 0;
-    color: $--pagination-button-color;
+    color: var.$pagination-button-color;
 
     .el-icon {
       display: block;
@@ -88,11 +88,11 @@
   }
 
   .el-pager li.disabled {
-    color: $--color-text-placeholder;
+    color: var.$color-text-placeholder;
     cursor: not-allowed;
   }
 
-  @include m(small) {
+  @include mixins.m(small) {
     .btn-prev,
     .btn-next,
     .el-pager li,
@@ -121,7 +121,7 @@
       line-height: 22px;
     }
 
-    @include e(editor) {
+    @include mixins.e(editor) {
       height: 22px;
       &.el-input .el-input__inner {
         height: 22px;
@@ -129,57 +129,57 @@
     }
   }
 
-  @include e(sizes) {
+  @include mixins.e(sizes) {
     margin: 0 10px 0 0;
     font-weight: normal;
-    color: $--color-text-regular;
+    color: var.$color-text-regular;
 
     .el-input .el-input__inner {
-      font-size: $--pagination-font-size;
+      font-size: var.$pagination-font-size;
       padding-left: 8px;
 
       &:hover {
-        border-color: $--pagination-hover-color;
+        border-color: var.$pagination-hover-color;
       }
     }
   }
 
-  @include e(total) {
+  @include mixins.e(total) {
     margin-right: 10px;
     font-weight: normal;
-    color: $--color-text-regular;
+    color: var.$color-text-regular;
   }
 
-  @include e(jump) {
+  @include mixins.e(jump) {
     margin-left: 24px;
     font-weight: normal;
-    color: $--color-text-regular;
+    color: var.$color-text-regular;
 
     .el-input__inner {
       padding: 0 3px;
     }
   }
 
-  @include e(rightwrapper) {
+  @include mixins.e(rightwrapper) {
     float: right;
   }
 
-  @include e(editor) {
+  @include mixins.e(editor) {
     line-height: 18px;
     padding: 0 2px;
-    height: $--pagination-button-height;
+    height: var.$pagination-button-height;
       
     text-align: center;
     margin: 0 2px;
     box-sizing: border-box;
-    border-radius: $--pagination-border-radius;
+    border-radius: var.$pagination-border-radius;
 
     &.el-input {
       width: 50px;
     }
 
     &.el-input .el-input__inner {
-      height: $--pagination-button-height;
+      height: var.$pagination-button-height;
     }
 
     .el-input__inner::-webkit-inner-spin-button,
@@ -189,18 +189,18 @@
     }
   }
 
-  @include when(background) {
+  @include mixins.when(background) {
     .btn-prev,
     .btn-next,
     .el-pager li {
       margin: 0 5px;
-      background-color: $--color-info-lighter;
-      color: $--color-text-regular;
+      background-color: var.$color-info-lighter;
+      color: var.$color-text-regular;
       min-width: 30px;
       border-radius: 2px;
 
       &.disabled {
-        color: $--color-text-placeholder;
+        color: var.$color-text-placeholder;
       }
     }
 
@@ -208,18 +208,18 @@
       padding: 0;
 
       &:disabled {
-        color: $--color-text-placeholder;
+        color: var.$color-text-placeholder;
       }
     }
 
     .el-pager li:not(.disabled) {
       &:hover {
-        color: $--pagination-hover-color;
+        color: var.$pagination-hover-color;
       }
 
       &.active {
-        background-color: $--color-primary;
-        color: $--color-white;
+        background-color: var.$color-primary;
+        color: var.$color-white;
       }
     }
 
@@ -234,7 +234,7 @@
   }
 }
 
-@include b(pager) {
+@include mixins.b(pager) {
   user-select: none;
   list-style: none;
   display: inline-block;
@@ -249,13 +249,13 @@
 
   li {
     padding: 0 4px;
-    background: $--pagination-background-color;
+    background: var.$pagination-background-color;
     vertical-align: top;
     display: inline-block;
-    font-size: $--pagination-font-size;
-    min-width: $--pagination-button-width;
-    height: $--pagination-button-height;
-    line-height: $--pagination-button-height;
+    font-size: var.$pagination-font-size;
+    min-width: var.$pagination-button-width;
+    height: var.$pagination-button-height;
+    line-height: var.$pagination-button-height;
     cursor: pointer;
     box-sizing: border-box;
     text-align: center;
@@ -264,10 +264,10 @@
     &.btn-quicknext,
     &.btn-quickprev {
       line-height: 28px;
-      color: $--pagination-button-color;
+      color: var.$pagination-button-color;
 
       &.disabled {
-        color: $--color-text-placeholder;
+        color: var.$color-text-placeholder;
       }
     }
 
@@ -284,11 +284,11 @@
     }
 
     &:hover {
-      color: $--pagination-hover-color;
+      color: var.$pagination-hover-color;
     }
 
     &.active {
-      color: $--pagination-hover-color;
+      color: var.$pagination-hover-color;
       cursor: default;
     }
   }

@@ -1,6 +1,7 @@
-@import "../common/var";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(date-range-picker) {
+@include mixins.b(date-range-picker) {
   width: 646px;
 
   &.has-sidebar {
@@ -20,7 +21,7 @@
     margin: 0;
   }
 
-  @include e(header) {
+  @include mixins.e(header) {
     position: relative;
     text-align: center;
     height: 28px;
@@ -40,15 +41,15 @@
     }
   }
 
-  @include e(content) {
+  @include mixins.e(content) {
     float: left;
     width: 50%;
     box-sizing: border-box;
     margin: 0;
     padding: 16px;
 
-    @include when(left) {
-      border-right: 1px solid $--datepicker-inner-border-color;
+    @include mixins.when(left) {
+      border-right: 1px solid var.$datepicker-inner-border-color;
     }
     .el-date-range-picker__header {
 
@@ -59,18 +60,18 @@
     }
   }
 
-  @include e(editors-wrap) {
+  @include mixins.e(editors-wrap) {
     box-sizing: border-box;
     display: table-cell;
 
-    @include when(right) {
+    @include mixins.when(right) {
       text-align: right;
     }
   }
 
-  @include e(time-header) {
+  @include mixins.e(time-header) {
     position: relative;
-    border-bottom: 1px solid $--datepicker-inner-border-color;
+    border-bottom: 1px solid var.$datepicker-inner-border-color;
     font-size: 12px;
     padding: 8px 5px 5px 5px;
     display: table;
@@ -81,11 +82,11 @@
       font-size: 20px;
       vertical-align: middle;
       display: table-cell;
-      color: $--datepicker-icon-color;
+      color: var.$datepicker-icon-color;
     }
   }
 
-  @include e(time-picker-wrap) {
+  @include mixins.e(time-picker-wrap) {
     position: relative;
     display: table-cell;
     padding: 0 5px;
@@ -95,7 +96,7 @@
       top: 13px;
       right: 0;
       z-index: 1;
-      background: $--color-white;
+      background: var.$color-white;
     }
   }
 }

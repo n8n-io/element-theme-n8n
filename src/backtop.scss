@@ -1,13 +1,13 @@
-@import "mixins/mixins";
-@import "./common/var";
+@use "mixins/mixins";
+@use "./common/var";
 
-@include b(backtop) {
+@include mixins.b(backtop) {
   position: fixed;
-  background-color: $--backtop-background-color;
+  background-color: var.$backtop-background-color;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  color: $--backtop-font-color;
+  color: var.$backtop-font-color;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -17,6 +17,6 @@
   z-index: 5;
 
   &:hover {
-    background-color: $--backtop-hover-background-color
+    background-color: var.$backtop-hover-background-color
   }
 }

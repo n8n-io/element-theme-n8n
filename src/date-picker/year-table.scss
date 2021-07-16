@@ -1,12 +1,13 @@
-@import "../common/var";
+@use "../common/var";
+@use "../mixins/mixins";
 
-@include b(year-table) {
+@include mixins.b(year-table) {
   font-size: 12px;
   margin: -1px;
   border-collapse: collapse;
 
   .el-icon {
-    color: $--datepicker-icon-color;
+    color: var.$datepicker-icon-color;
   }
 
   td {
@@ -16,18 +17,18 @@
 
     &.today {
       .cell {
-        color: $--color-primary;
+        color: var.$color-primary;
         font-weight: bold;
       }
     }
 
     &.disabled .cell {
-      background-color: $--background-color-base;
+      background-color: var.$background-color-base;
       cursor: not-allowed;
-      color: $--color-text-placeholder;
+      color: var.$color-text-placeholder;
 
       &:hover {
-        color: $--color-text-placeholder;
+        color: var.$color-text-placeholder;
       }
     }
 
@@ -36,16 +37,16 @@
       height: 32px;
       display: block;
       line-height: 32px;
-      color: $--datepicker-font-color;
+      color: var.$datepicker-font-color;
       margin: 0 auto;
 
       &:hover {
-        color: $--datepicker-hover-font-color;
+        color: var.$datepicker-hover-font-color;
       }
     }
 
     &.current:not(.disabled) .cell {
-      color: $--datepicker-active-color;
+      color: var.$datepicker-active-color;
     }
   }
 }

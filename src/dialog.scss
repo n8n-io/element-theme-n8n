@@ -1,18 +1,18 @@
-@import "mixins/mixins";
-@import "mixins/utils";
-@import "./common/var";
-@import "common/popup";
+@use "mixins/mixins";
+@use "mixins/utils";
+@use "./common/var";
+@use "common/popup";
 
-@include b(dialog) {
+@include mixins.b(dialog) {
   position: relative;
   margin: 0 auto 50px;
-  background: $--dialog-background-color;
-  border-radius: $--border-radius-small;
-  box-shadow: $--dialog-box-shadow;
+  background: var.$dialog-background-color;
+  border-radius: var.$border-radius-small;
+  box-shadow: var.$dialog-box-shadow;
   box-sizing: border-box;
   width: 50%;
 
-  @include when(fullscreen) {
+  @include mixins.when(fullscreen) {
     width: 100%;
     margin-top: 0;
     margin-bottom: 0;
@@ -20,7 +20,7 @@
     overflow: auto;
   }
 
-  @include e(wrapper) {
+  @include mixins.e(wrapper) {
     position: fixed;
     top: 0;
     right: 0;
@@ -30,63 +30,63 @@
     margin: 0;
   }
 
-  @include e(header) {
-    padding: $--dialog-padding-primary;
+  @include mixins.e(header) {
+    padding: var.$dialog-padding-primary;
     padding-bottom: 10px;
   }
 
-  @include e(headerbtn) {
+  @include mixins.e(headerbtn) {
     position: absolute;
-    top: $--dialog-padding-primary;
-    right: $--dialog-padding-primary;
+    top: var.$dialog-padding-primary;
+    right: var.$dialog-padding-primary;
     padding: 0;
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: $--message-close-size;
+    font-size: var.$message-close-size;
 
     .el-dialog__close {
-      color: $--color-info;
+      color: var.$color-info;
     }
 
     &:focus, &:hover {
       .el-dialog__close {
-        color: $--color-primary;
+        color: var.$color-primary;
       }
     }
   }
 
-  @include e(title) {
-    line-height: $--dialog-font-line-height;
-    font-size: $--dialog-title-font-size;
-    color: $--color-text-primary;
+  @include mixins.e(title) {
+    line-height: var.$dialog-font-line-height;
+    font-size: var.$dialog-title-font-size;
+    color: var.$color-text-primary;
   }
 
-  @include e(body) {
-    padding: ($--dialog-padding-primary + 10px) $--dialog-padding-primary;
-    color: $--color-text-regular;
-    font-size: $--dialog-content-font-size;
+  @include mixins.e(body) {
+    padding: (var.$dialog-padding-primary + 10px) var.$dialog-padding-primary;
+    color: var.$color-text-regular;
+    font-size: var.$dialog-content-font-size;
     word-break: break-all;
   }
 
-  @include e(footer) {
-    padding: $--dialog-padding-primary;
+  @include mixins.e(footer) {
+    padding: var.$dialog-padding-primary;
     padding-top: 10px;
     text-align: right;
     box-sizing: border-box;
   }
 
   // 内容居中布局
-  @include m(center) {
+  @include mixins.m(center) {
     text-align: center;
 
-    @include e(body) {
+    @include mixins.e(body) {
       text-align: initial;
-      padding: 25px ($--dialog-padding-primary + 5px) 30px;
+      padding: 25px (var.$dialog-padding-primary + 5px) 30px;
     }
 
-    @include e(footer) {
+    @include mixins.e(footer) {
       text-align: inherit;
     }
   }

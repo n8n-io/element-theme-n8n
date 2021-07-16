@@ -1,8 +1,8 @@
-@import "../common/var";
-@import "../mixins/mixins";
-@import "./picker-panel.scss";
+@use "../common/var";
+@use "../mixins/mixins";
+@use "./picker-panel.scss";
 
-@include b(date-picker) {
+@include mixins.b(date-picker) {
   width: 322px;
 
   &.has-sidebar.has-time {
@@ -26,15 +26,15 @@
     width: 100%;
   }
 
-  @include e(editor-wrap) {
+  @include mixins.e(editor-wrap) {
     position: relative;
     display: table-cell;
     padding: 0 5px;
   }
 
-  @include e(time-header) {
+  @include mixins.e(time-header) {
     position: relative;
-    border-bottom: 1px solid $--datepicker-inner-border-color;
+    border-bottom: 1px solid var.$datepicker-inner-border-color;
     font-size: 12px;
     padding: 8px 5px 5px 5px;
     display: table;
@@ -42,14 +42,14 @@
     box-sizing: border-box;
   }
 
-  @include e(header) {
+  @include mixins.e(header) {
     margin: 12px;
     text-align: center;
 
-    @include m(bordered) {
+    @include mixins.m(bordered) {
       margin-bottom: 0;
       padding-bottom: 12px;
-      border-bottom: solid 1px $--border-color-lighter;
+      border-bottom: solid 1px var.$border-color-lighter;
 
       & + .el-picker-panel__content {
         margin-top: 0;
@@ -57,38 +57,38 @@
     }
   }
 
-  @include e(header-label) {
+  @include mixins.e(header-label) {
     font-size: 16px;
     font-weight: 500;
     padding: 0 5px;
     line-height: 22px;
     text-align: center;
     cursor: pointer;
-    color: $--color-text-regular;
+    color: var.$color-text-regular;
 
     &:hover {
-      color: $--datepicker-hover-font-color;
+      color: var.$datepicker-hover-font-color;
     }
 
     &.active {
-      color: $--datepicker-active-color;
+      color: var.$datepicker-active-color;
     }
   }
 
-  @include e(prev-btn) {
+  @include mixins.e(prev-btn) {
     float: left;
   }
 
-  @include e(next-btn) {
+  @include mixins.e(next-btn) {
     float: right;
   }
 
-  @include e(time-wrap) {
+  @include mixins.e(time-wrap) {
     padding: 10px;
     text-align: center;
   }
 
-  @include e(time-label) {
+  @include mixins.e(time-label) {
     float: left;
     cursor: pointer;
     line-height: 30px;

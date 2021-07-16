@@ -1,8 +1,8 @@
-@import "./common/var";
-@import "./date-picker/picker.scss";
-@import "./date-picker/date-picker.scss";
-@import "./scrollbar.scss";
-@import "./popper";
+@use "./common/var";
+@use "./date-picker/picker.scss";
+@use "./date-picker/date-picker.scss";
+@use "./scrollbar.scss";
+@use "./popper";
 
 .time-select {
   margin: 5px 0;
@@ -21,17 +21,17 @@
 }
 
 .time-select-item.selected:not(.disabled) {
-  color: $--color-primary;
+  color: var.$color-primary;
   font-weight: bold;
 }
 
 .time-select-item.disabled {
-  color: $--datepicker-border-color;
+  color: var.$datepicker-border-color;
   cursor: not-allowed;
 }
 
 .time-select-item:hover {
-  background-color: $--background-color-base;
+  background-color: var.$background-color-base;
   font-weight: bold;
   cursor: pointer;
 }
