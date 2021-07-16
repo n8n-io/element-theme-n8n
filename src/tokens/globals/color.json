@@ -1,0 +1,173 @@
+{
+	"color": {
+		"primary": {
+			"h": {
+				"value": "7"
+			},
+			"s": {
+				"value": "100%"
+			},
+			"l": {
+				"value": "68%"
+			}
+		},
+		"secondary": {
+			"h": {
+				"value": "150"
+			},
+			"s": {
+				"value": "74%"
+			},
+			"l": {
+				"value": "40%"
+			}
+		},
+		"success": {
+			"h": {
+				"value": "150"
+			},
+			"s": {
+				"value": "74%"
+			},
+			"l": {
+				"value": "40%"
+			}
+		},
+		"warning": {
+			"h": {
+				"value": "36"
+			},
+			"s": {
+				"value": "77%"
+			},
+			"l": {
+				"value": "57%"
+			}
+		},
+		"danger": {
+			"h": {
+				"value": "0"
+			},
+			"s": {
+				"value": "88%"
+			},
+			"l": {
+				"value": "65%"
+			}
+		},
+		"info": {
+			"h": {
+				"value": "220"
+			},
+			"s": {
+				"value": "4%"
+			},
+			"l": {
+				"value": "58%"
+			}
+		},
+		"text": {
+			"primary": {
+				"h": {
+					"value": "220"
+				},
+				"s": {
+					"value": "3%"
+				},
+				"l": {
+					"value": "19%"
+				}
+			},
+			"regular": {
+				"h": {
+					"value": "220"
+				},
+				"s": {
+					"value": "3%"
+				},
+				"l": {
+					"value": "39%"
+				}
+			},
+			"secondary": {
+				"h": {
+					"value": "220"
+				},
+				"s": {
+					"value": "4%"
+				},
+				"l": {
+					"value": "58%"
+				}
+			},
+			"placeholder": {
+				"h": {
+					"value": "220"
+				},
+				"s": {
+					"value": "11%"
+				},
+				"l": {
+					"value": "78%"
+				}
+			}
+		},
+		"border": {
+			"base": {
+				"h": {
+					"value": "222"
+				},
+				"s": {
+					"value": "17%"
+				},
+				"l": {
+					"value": "88%"
+				}
+			},
+			"light": {
+				"h": {
+					"value": "220"
+				},
+				"s": {
+					"value": "20%"
+				},
+				"l": {
+					"value": "91%"
+				}
+			},
+			"lighter": {
+				"h": {
+					"value": "222"
+				},
+				"s": {
+					"value": "33%"
+				},
+				"l": {
+					"value": "94%"
+				}
+			},
+			"extra-light": {
+				"h": {
+					"value": "216"
+				},
+				"s": {
+					"value": "63%"
+				},
+				"l": {
+					"value": "97%"
+				}
+			},
+			"color-background-base": {
+				"h": {
+					"value": "216"
+				},
+				"s": {
+					"value": "33%"
+				},
+				"l": {
+					"value": "97%"
+				}
+			}
+		}
+	}
+}

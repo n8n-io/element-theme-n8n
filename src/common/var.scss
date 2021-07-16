@@ -1,64 +1,6 @@
 @use "sass:math";
 @use "../mixins/function.scss";
-
-/* Element Chalk Variables */
-:root {
-  --color-primary-h: 210;
-  --color-primary-s: 100%;
-  --color-primary-l: 63%;
-
-  --color-success-h: 100;
-  --color-success-s: 54%;
-  --color-success-l: 49%;
-
-  --color-warning-h: 36;
-  --color-warning-s: 77%;
-  --color-warning-l: 57%;
-
-  --color-danger-h: 0;
-  --color-danger-s: 87%;
-  --color-danger-l: 69%;
-
-  --color-info-h: 220;
-  --color-info-s: 4%;
-  --color-info-l: 58%;
-
-  --color-text-primary-h: 220;
-  --color-text-primary-s: 3%;
-  --color-text-primary-l: 19%;
-
-  --color-text-regular-h: 220;
-  --color-text-regular-s: 3%;
-  --color-text-regular-l: 39%;
-
-  --color-text-secondary-h: 220;
-  --color-text-secondary-s: 4%;
-  --color-text-secondary-l: 58%;
-
-  --color-text-placeholder-h: 220;
-  --color-text-placeholder-s: 11%;
-  --color-text-placeholder-l: 78%;
-
-  --border-color-base-h: 222;
-  --border-color-base-s: 17%;
-  --border-color-base-l: 88%;
-
-  --border-color-light-h: 220;
-  --border-color-light-s: 20%;
-  --border-color-light-l: 91%;
-
-  --border-color-lighter-h: 222;
-  --border-color-lighter-s: 33%;
-  --border-color-lighter-l: 94%;
-
-  --border-color-extra-light-h: 216;
-  --border-color-extra-light-s: 63%;
-  --border-color-extra-light-l: 97%;
-
-  --background-color-base-h: 216;
-  --background-color-base-s: 33%;
-  --background-color-base-l: 97%;
-}
+@use "../tokens";
 
 // Special comment for theme configurator
 // type|skipAutoTranslation|Category|Order
@@ -161,17 +103,17 @@ $color-text-secondary: hsl(var(#{--color-text-secondary-h}), var(#{--color-text-
 /// color|1|Font Color|2
 $color-text-placeholder: hsl(var(#{--color-text-placeholder-h}), var(#{--color-text-placeholder-s}), var(#{--color-text-placeholder-l})) !default;
 /// color|1|Border Color|3
-$border-color-base: hsl(var(#{--border-color-base-h}), var(#{--border-color-base-s}), var(#{--border-color-base-l})) !default;
+$border-color-base: hsl(var(#{--color-border-base-h}), var(#{--color-border-base-s}), var(#{--color-border-base-l})) !default;
 /// color|1|Border Color|3
-$border-color-light: hsl(var(#{--border-color-light-h}), var(#{--border-color-light-s}), var(#{--border-color-light-l})) !default;
+$border-color-light: hsl(var(#{--color-border-light-h}), var(#{--color-border-light-s}), var(#{--color-border-light-l})) !default;
 /// color|1|Border Color|3
-$border-color-lighter: hsl(var(#{--border-color-lighter-h}), var(#{--border-color-lighter-s}), var(#{--border-color-lighter-l})) !default;
+$border-color-lighter: hsl(var(#{--color-border-lighter-h}), var(#{--color-border-lighter-s}), var(#{--color-border-lighter-l})) !default;
 /// color|1|Border Color|3
-$border-color-extra-light: hsl(var(#{--border-color-extra-light-h}), var(#{--border-color-extra-light-s}), var(#{--border-color-extra-light-l})) !default;
+$border-color-extra-light: hsl(var(#{--color-border-extra-light-h}), var(#{--color-border-extra-light-s}), var(#{--color-border-extra-light-l})) !default;
 
 // Background
 /// color|1|Background Color|4
-$background-color-base: hsl(var(#{--background-color-base-h}), var(#{--background-color-base-s}), var(#{--background-color-base-l})) !default;
+$background-color-base: hsl(var(#{--color-background-base-h}), var(#{--color-background-base-s}), var(#{--color-background-base-l})) !default;
 
 /* Link
 -------------------------- */
