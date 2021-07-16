@@ -69,27 +69,38 @@
 		"text": {
 			"primary": {
 				"h": {
-					"value": "220"
+					"value": "0"
 				},
 				"s": {
-					"value": "3%"
+					"value": "0%"
 				},
 				"l": {
-					"value": "19%"
+					"value": "33%"
 				}
 			},
 			"regular": {
 				"h": {
-					"value": "220"
+					"value": "240"
 				},
 				"s": {
-					"value": "3%"
+					"value": "4%"
 				},
 				"l": {
-					"value": "39%"
+					"value": "51%"
 				}
 			},
 			"secondary": {
+				"h": {
+					"value": "222"
+				},
+				"s": {
+					"value": "17%"
+				},
+				"l": {
+					"value": "88%"
+				}
+			},
+			"placeholder": {
 				"h": {
 					"value": "220"
 				},
@@ -98,17 +109,6 @@
 				},
 				"l": {
 					"value": "58%"
-				}
-			},
-			"placeholder": {
-				"h": {
-					"value": "220"
-				},
-				"s": {
-					"value": "11%"
-				},
-				"l": {
-					"value": "78%"
 				}
 			}
 		},
@@ -156,8 +156,10 @@
 				"l": {
 					"value": "97%"
 				}
-			},
-			"color-background-base": {
+			}
+		},
+		"background": {
+			"base": {
 				"h": {
 					"value": "216"
 				},
