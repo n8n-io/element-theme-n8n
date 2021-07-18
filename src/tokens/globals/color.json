@@ -1,185 +1,54 @@
 {
 	"color": {
 		"primary": {
-			"h": {
-				"value": "7"
-			},
-			"s": {
-				"value": "100%"
-			},
-			"l": {
-				"value": "68%"
-			}
+			"value": "hsl(7,100%,68%)"
 		},
 		"secondary": {
-			"h": {
-				"value": "150"
-			},
-			"s": {
-				"value": "74%"
-			},
-			"l": {
-				"value": "40%"
-			}
+			"value": "hsl(150,74%,40%)"
 		},
 		"success": {
-			"h": {
-				"value": "150"
-			},
-			"s": {
-				"value": "74%"
-			},
-			"l": {
-				"value": "40%"
-			}
+			"value": "hsl(150,74%,40%)"
 		},
 		"warning": {
-			"h": {
-				"value": "36"
-			},
-			"s": {
-				"value": "77%"
-			},
-			"l": {
-				"value": "57%"
-			}
+			"value": "hsl(36,77%,57%)"
 		},
 		"danger": {
-			"h": {
-				"value": "0"
-			},
-			"s": {
-				"value": "88%"
-			},
-			"l": {
-				"value": "65%"
-			}
+			"value": "hsl(0,88%,65%)"
 		},
 		"info": {
-			"h": {
-				"value": "220"
-			},
-			"s": {
-				"value": "4%"
-			},
-			"l": {
-				"value": "58%"
-			}
+			"value": "hsl(220,4%,58%)"
 		},
 		"text": {
 			"primary": {
-				"h": {
-					"value": "0"
-				},
-				"s": {
-					"value": "0%"
-				},
-				"l": {
-					"value": "33%"
-				},
-				"invert": {
-					"h": {
-						"value": "0"
-					},
-					"s": {
-						"value": "0"
-					},
-					"l": {
-						"value": "100%"
-					}
-				}
+				"value": "hsl(0, 0%, 33%)"
 			},
 			"regular": {
-				"h": {
-					"value": "240"
-				},
-				"s": {
-					"value": "4%"
-				},
-				"l": {
-					"value": "51%"
-				}
+				"value": "hsl(240, 4%, 51%)"
 			},
 			"secondary": {
-				"h": {
-					"value": "222"
-				},
-				"s": {
-					"value": "17%"
-				},
-				"l": {
-					"value": "88%"
-				}
+				"value": "hsl(222, 17%, 88%)"
 			},
 			"placeholder": {
-				"h": {
-					"value": "220"
-				},
-				"s": {
-					"value": "4%"
-				},
-				"l": {
-					"value": "58%"
-				}
+				"value": "hsl(220, 4%, 58%)"
 			}
 		},
 		"border": {
 			"base": {
-				"h": {
-					"value": "222"
-				},
-				"s": {
-					"value": "17%"
-				},
-				"l": {
-					"value": "88%"
-				}
+				"value": "hsl(222, 17%, 88%)"
 			},
 			"light": {
-				"h": {
-					"value": "220"
-				},
-				"s": {
-					"value": "20%"
-				},
-				"l": {
-					"value": "91%"
-				}
+				"value": "hsl(220, 20%, 91%)"
 			},
 			"lighter": {
-				"h": {
-					"value": "222"
-				},
-				"s": {
-					"value": "33%"
-				},
-				"l": {
-					"value": "94%"
-				}
+				"value": "hsl(222, 33%, 94%)"
 			},
 			"extra-light": {
-				"h": {
-					"value": "216"
-				},
-				"s": {
-					"value": "63%"
-				},
-				"l": {
-					"value": "97%"
-				}
+				"value": "hsl(216, 63%, 97%)"
 			}
 		},
 		"background": {
 			"base": {
-				"h": {
-					"value": "216"
-				},
-				"s": {
-					"value": "33%"
-				},
-				"l": {
-					"value": "97%"
-				}
+				"value": "hsl(216, 33%, 97%)"
 			}
 		}
 	}
