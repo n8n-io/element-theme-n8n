@@ -37,7 +37,6 @@ StyleDictionary.registerFormat({
 			outputReferences
 		} = options;
 		dictionary.allTokens = dictionary.allTokens.reduce((accu, token) => {
-			console.log(token.value);
 			const value = typeof token.value === 'object' ? token.value.value : token.value;
 			if (token.attributes.category === 'color' && typeof value === 'string' && value.startsWith('hsl(')) {
 				const colors = value.replace('hsl(', '').replace(')', '').split(',');
