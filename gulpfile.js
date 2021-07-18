@@ -41,13 +41,19 @@ StyleDictionary.registerFormat({
 			if (token.attributes.category === 'color' && typeof value === 'string' && value.startsWith('hsl(')) {
 				const colors = value.replace('hsl(', '').replace(')', '').split(',');
 				const parts = ['h', 's', 'l'];
-				accu = accu.concat(colors.map((v, i) => {
-					return {
+				colors.map((v, i) => {
+					accu.push({
 						...token,
 						value: v,
 						name: `${token.name}-${parts[i]}`,
-					};
-				}));
+					});
+				});
+
+				accu.push({
+					...token,
+					value: `hsl(var(--${token.name}-h), var(--${token.name}-s), var(--${token.name}-l))`
+				});
+
 				return accu;
 			}
 

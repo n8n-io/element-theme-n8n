@@ -50,7 +50,7 @@
 			"lighter": {
 				"value": "hsl(222, 33%, 94%)"
 			},
-			"extra-light": {
+			"xlight": {
 				"value": "hsl(216, 63%, 97%)"
 			}
 		},
