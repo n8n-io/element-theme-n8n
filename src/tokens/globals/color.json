@@ -6,37 +6,73 @@
 			}
 		},
 		"primary": {
-			"value": "hsl(7,100%,68%)"
+			"dark": {
+				"value": "hsl(7, 49%, 18%)"
+			},
+			"base": {
+				"value": "hsl(7,100%,68%)"
+			},
+			"light": {
+				"value": "hsl(11, 100%, 88%)"
+			},
+			"lighter": {
+				"value": "hsl(11, 100%, 95%)"
+			},
+			"xlight": {
+				"value": "hsl(4, 100%, 97%)"
+			}
 		},
 		"secondary": {
-			"value": "hsl(150,74%,40%)"
+			"base": {
+				"value": "hsl(247, 100%, 65%)"
+			}
 		},
 		"success": {
-			"value": "hsl(150,74%,40%)"
+			"base": {
+				"value": "hsl(150,74%,40%)"
+			},
+			"light": {
+				"value": "hsl(100, 53%, 90%)"
+			},
+			"lighter": {
+				"value": "hsl(99, 54%, 95%)"
+			}
 		},
 		"warning": {
-			"value": "hsl(36,77%,57%)"
+			"base": {
+				"value": "hsl(36,77%,57%)"
+			}
 		},
 		"danger": {
-			"value": "hsl(0,88%,65%)"
+			"base": {
+				"value": "hsl(0,88%,65%)"
+			},
+			"light": {
+				"value": "hsl(0, 87%, 94%)"
+			},
+			"lighter": {
+				"value": "hsl(0, 88%, 97%)"
+			}
 		},
 		"info": {
-			"value": "hsl(220,4%,58%)"
+			"base": {
+				"value": "hsl(220,4%,58%)"
+			}
 		},
 		"text": {
-			"primary": {
+			"dark": {
 				"value": "hsl(0, 0%, 33%)"
 			},
-			"regular": {
+			"base": {
 				"value": "hsl(240, 4%, 51%)"
 			},
-			"secondary": {
+			"light": {
 				"value": "hsl(222, 17%, 88%)"
 			},
-			"placeholder": {
+			"lighter": {
 				"value": "hsl(220, 4%, 58%)"
 			},
-			"invert": {
+			"xlight": {
 				"value": "{color.base.white}"
 			}
 		},
@@ -45,18 +81,30 @@
 				"value": "hsl(222, 17%, 88%)"
 			},
 			"light": {
-				"value": "hsl(220, 20%, 91%)"
+				"value": "hsl(220, 20%, 88%)"
 			},
 			"lighter": {
-				"value": "hsl(222, 33%, 94%)"
+				"value": "hsl(0, 0%, 93%)"
 			},
 			"xlight": {
 				"value": "hsl(216, 63%, 97%)"
 			}
 		},
 		"background": {
+			"dark": {
+				"value": "hsl(240, 4%, 19%)"
+			},
 			"base": {
-				"value": "hsl(216, 33%, 97%)"
+				"value": "hsl(240, 4%, 19%)"
+			},
+			"light": {
+				"value": "hsl(252, 71%, 99%)"
+			},
+			"lighter": {
+				"value": "hsl(220, 27%, 98%)"
+			},
+			"xlight": {
+				"value": "hsl(0, 0%, 93%)"
 			}
 		}
 	}

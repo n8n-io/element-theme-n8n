@@ -18,90 +18,90 @@ $color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$color-primary: var(--color-primary) !default;
+$color-primary: var(--color-primary-base) !default;
 /// color|1|Background Color|4
 $color-white: #FFFFFF !default;
 /// color|1|Background Color|4
 $color-black: #000000 !default;
 
-$color-primary-light-1: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 4%) !default;
-$color-primary-light-2: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 8%) !default;
-$color-primary-light-3: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 12%) !default;
-$color-primary-light-4: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 16%) !default;
-$color-primary-light-5: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 20%) !default;
-$color-primary-light-6: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 24%) !default;
-$color-primary-light-7: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 28%) !default;
-$color-primary-light-8: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 32%) !default;
-$color-primary-light-9: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 36%) !default;
+$color-primary-light-1: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 4%) !default;
+$color-primary-light-2: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 8%) !default;
+$color-primary-light-3: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 12%) !default;
+$color-primary-light-4: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 16%) !default;
+$color-primary-light-5: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 20%) !default;
+$color-primary-light-6: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 24%) !default;
+$color-primary-light-7: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 28%) !default;
+$color-primary-light-8: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 32%) !default;
+$color-primary-light-9: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-success: var(--color-success) !default;
+$color-success: var(--color-success-base) !default;
 
-$color-success-light-1: function.lightness(--color-success-h, --color-success-s, --color-success-l, 4%) !default;
-$color-success-light-2: function.lightness(--color-success-h, --color-success-s, --color-success-l, 8%) !default;
-$color-success-light-3: function.lightness(--color-success-h, --color-success-s, --color-success-l, 12%) !default;
-$color-success-light-4: function.lightness(--color-success-h, --color-success-s, --color-success-l, 16%) !default;
-$color-success-light-5: function.lightness(--color-success-h, --color-success-s, --color-success-l, 20%) !default;
-$color-success-light-6: function.lightness(--color-success-h, --color-success-s, --color-success-l, 24%) !default;
-$color-success-light-7: function.lightness(--color-success-h, --color-success-s, --color-success-l, 28%) !default;
-$color-success-light-8: function.lightness(--color-success-h, --color-success-s, --color-success-l, 32%) !default;
-$color-success-light-9: function.lightness(--color-success-h, --color-success-s, --color-success-l, 36%) !default;
+$color-success-light-1: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 4%) !default;
+$color-success-light-2: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 8%) !default;
+$color-success-light-3: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 12%) !default;
+$color-success-light-4: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 16%) !default;
+$color-success-light-5: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 20%) !default;
+$color-success-light-6: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 24%) !default;
+$color-success-light-7: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 28%) !default;
+$color-success-light-8: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 32%) !default;
+$color-success-light-9: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-warning: var(--color-warning) !default;
+$color-warning: var(--color-warning-base) !default;
 
-$color-warning-light-1: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 4%) !default;
-$color-warning-light-2: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 8%) !default;
-$color-warning-light-3: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 12%) !default;
-$color-warning-light-4: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 16%) !default;
-$color-warning-light-5: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 20%) !default;
-$color-warning-light-6: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 24%) !default;
-$color-warning-light-7: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 28%) !default;
-$color-warning-light-8: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 32%) !default;
-$color-warning-light-9: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 36%) !default;
+$color-warning-light-1: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 4%) !default;
+$color-warning-light-2: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 8%) !default;
+$color-warning-light-3: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 12%) !default;
+$color-warning-light-4: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 16%) !default;
+$color-warning-light-5: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 20%) !default;
+$color-warning-light-6: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 24%) !default;
+$color-warning-light-7: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 28%) !default;
+$color-warning-light-8: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 32%) !default;
+$color-warning-light-9: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-danger: var(--color-danger) !default;
+$color-danger: var(--color-danger-base) !default;
 
-$color-danger-light-1: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 4%) !default;
-$color-danger-light-2: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 8%) !default;
-$color-danger-light-3: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 12%) !default;
-$color-danger-light-4: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 16%) !default;
-$color-danger-light-5: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 20%) !default;
-$color-danger-light-6: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 24%) !default;
-$color-danger-light-7: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 28%) !default;
-$color-danger-light-8: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 32%) !default;
-$color-danger-light-9: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 36%) !default;
+$color-danger-light-1: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 4%) !default;
+$color-danger-light-2: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 8%) !default;
+$color-danger-light-3: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 12%) !default;
+$color-danger-light-4: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 16%) !default;
+$color-danger-light-5: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 20%) !default;
+$color-danger-light-6: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 24%) !default;
+$color-danger-light-7: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 28%) !default;
+$color-danger-light-8: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 32%) !default;
+$color-danger-light-9: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-info: var(--color-info) !default;
+$color-info: var(--color-info-base) !default;
 
-$color-info-light-1: function.lightness(--color-info-h, --color-info-s, --color-info-l, 4%) !default;
-$color-info-light-2: function.lightness(--color-info-h, --color-info-s, --color-info-l, 8%) !default;
-$color-info-light-3: function.lightness(--color-info-h, --color-info-s, --color-info-l, 12%) !default;
-$color-info-light-4: function.lightness(--color-info-h, --color-info-s, --color-info-l, 16%) !default;
-$color-info-light-5: function.lightness(--color-info-h, --color-info-s, --color-info-l, 20%) !default;
-$color-info-light-6: function.lightness(--color-info-h, --color-info-s, --color-info-l, 24%) !default;
-$color-info-light-7: function.lightness(--color-info-h, --color-info-s, --color-info-l, 28%) !default;
-$color-info-light-8: function.lightness(--color-info-h, --color-info-s, --color-info-l, 32%) !default;
-$color-info-light-9: function.lightness(--color-info-h, --color-info-s, --color-info-l, 36%) !default;
+$color-info-light-1: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 4%) !default;
+$color-info-light-2: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 8%) !default;
+$color-info-light-3: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 12%) !default;
+$color-info-light-4: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 16%) !default;
+$color-info-light-5: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 20%) !default;
+$color-info-light-6: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 24%) !default;
+$color-info-light-7: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 28%) !default;
+$color-info-light-8: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 32%) !default;
+$color-info-light-9: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 36%) !default;
 
-$color-primary-light: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 30%) !default;
-$color-success-light: function.lightness(--color-success-h, --color-success-s, --color-success-l, 41%) !default;
-$color-warning-light: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 34%) !default;
-$color-danger-light: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 24%) !default;
-$color-info-light: function.lightness(--color-info-h, --color-info-s, --color-info-l, 34%) !default;
+$color-primary-light: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 30%) !default;
+$color-success-light: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 41%) !default;
+$color-warning-light: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 34%) !default;
+$color-danger-light: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 24%) !default;
+$color-info-light: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 34%) !default;
 
-$color-primary-lighter: function.lightness(--color-primary-h, --color-primary-s, --color-primary-l, 34%) !default;
-$color-success-lighter: function.lightness(--color-success-h, --color-success-s, --color-success-l, 48%) !default;
-$color-warning-lighter: function.lightness(--color-warning-h, --color-warning-s, --color-warning-l, 40%) !default;
-$color-danger-lighter: function.lightness(--color-danger-h, --color-danger-s, --color-danger-l, 28%) !default;
-$color-info-lighter: function.lightness(--color-info-h, --color-info-s, --color-info-l, 39%) !default;
+$color-primary-lighter: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 34%) !default;
+$color-success-lighter: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 48%) !default;
+$color-warning-lighter: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 40%) !default;
+$color-danger-lighter: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 28%) !default;
+$color-info-lighter: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 39%) !default;
 
 /// color|1|Font Color|2
-$color-text-primary: var(--color-text-primary) !default;
+$color-text-primary: var(--color-text-dark) !default;
 /// color|1|Font Color|2
-$color-text-regular: var(--color-text-regular) !default;
+$color-text-regular: var(--color-text-base) !default;
 /// color|1|Font Color|2
-$color-text-secondary: var(--color-text-secondary) !default;
+$color-text-secondary: var(--color-text-light) !default;
 /// color|1|Font Color|2
-$color-text-placeholder: var(--color-text-placeholder) !default;
+$color-text-placeholder: var(--color-text-lighter) !default;
 /// color|1|Border Color|3
 $border-color-base: var(--color-border-base) !default;
 /// color|1|Border Color|3
@@ -805,7 +805,7 @@ $card-padding: 20px !default;
 $slider-main-background-color: $color-primary !default;
 /// color||Color|0
 $slider-runway-background-color: $border-color-light !default;
-$slider-button-hover-color: function.saturation(--color-primary-h, --color-primary-s, --color-primary-l, 8%) !default;
+$slider-button-hover-color: function.saturation(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 8%) !default;
 $slider-stop-background-color: $color-white !default;
 $slider-disable-color: $color-text-placeholder !default;
 $slider-margin: 16px 0 !default;
@@ -873,8 +873,8 @@ $loading-fullscreen-spinner-size: 50px !default;
 
 /* Scrollbar
 --------------------------*/
-$scrollbar-background-color: hsla(var(#{--color-text-secondary-h}), var(#{--color-text-secondary-s}), var(#{--color-text-secondary-l}), .3) !default;
-$scrollbar-hover-background-color: hsla(var(#{--color-text-secondary-h}), var(#{--color-text-secondary-s}), var(#{--color-text-secondary-l}), .5) !default;
+$scrollbar-background-color: hsla(var(#{--color-text-light-h}), var(#{--color-text-light-s}), var(#{--color-text-light-l}), .3) !default;
+$scrollbar-hover-background-color: hsla(var(#{--color-text-light-h}), var(#{--color-text-light-s}), var(#{--color-text-light-l}), .5) !default;
 
 /* Carousel
 --------------------------*/
