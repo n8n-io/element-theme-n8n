@@ -37,13 +37,15 @@ StyleDictionary.registerFormat({
 			outputReferences
 		} = options;
 		dictionary.allTokens = dictionary.allTokens.reduce((accu, token) => {
-			if (token.attributes.category === 'color' && token.value.startsWith('hsl(')) {
-				const colors = token.value.replace('hsl(', '').replace(')', '').split(',');
+			console.log(token.value);
+			const value = typeof token.value === 'object' ? token.value.value : token.value;
+			if (token.attributes.category === 'color' && typeof value === 'string' && value.startsWith('hsl(')) {
+				const colors = value.replace('hsl(', '').replace(')', '').split(',');
 				const parts = ['h', 's', 'l'];
-				accu = accu.concat(colors.map((value, i) => {
+				accu = accu.concat(colors.map((v, i) => {
 					return {
 						...token,
-						value,
+						value: v,
 						name: `${token.name}-${parts[i]}`,
 					};
 				}));

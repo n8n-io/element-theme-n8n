@@ -1,5 +1,10 @@
 {
 	"color": {
+		"base": {
+			"white": {
+				"value": "hsl(0, 0%, 100%)"
+			}
+		},
 		"primary": {
 			"value": "hsl(7,100%,68%)"
 		},
@@ -30,6 +35,9 @@
 			},
 			"placeholder": {
 				"value": "hsl(220, 4%, 58%)"
+			},
+			"invert": {
+				"value": "{color.base.white}"
 			}
 		},
 		"border": {
