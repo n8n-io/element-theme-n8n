@@ -67,10 +67,10 @@
 				"value": "hsl(240, 4%, 51%)"
 			},
 			"light": {
-				"value": "hsl(222, 17%, 88%)"
+				"value": "hsl(220, 4%, 58%)"
 			},
 			"lighter": {
-				"value": "hsl(220, 4%, 58%)"
+				"value": "hsl(222, 17%, 88%)"
 			},
 			"xlight": {
 				"value": "{color.base.white}"
@@ -95,16 +95,16 @@
 				"value": "hsl(240, 4%, 19%)"
 			},
 			"base": {
-				"value": "hsl(240, 4%, 19%)"
+				"value": "hsl(220, 30%, 96%)"
 			},
 			"light": {
-				"value": "hsl(252, 71%, 99%)"
-			},
-			"lighter": {
 				"value": "hsl(220, 27%, 98%)"
 			},
+			"lighter": {
+				"value": "hsl(252, 71%, 99%)"
+			},
 			"xlight": {
-				"value": "hsl(0, 0%, 93%)"
+				"value": "{color.base.white}"
 			}
 		}
 	}
