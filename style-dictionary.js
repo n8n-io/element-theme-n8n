@@ -4,14 +4,18 @@ const CUSTOM_FORMAT = 'css/custom';
 const THEMES = ['dark'];
 
 const build = () => {
-	buildDictionary(getGlobalConfig());
+	buildDictionary(getGlobalConfig(), {
+		wrapper: ':root'
+	});
 
 	THEMES.forEach((theme) => {
-		buildDictionary(getThemeConfig(theme));
+		buildDictionary(getThemeConfig(theme), {
+			wrapper: `body.theme-${theme}`
+		});
 	});
 };
 
-function buildDictionary(config) {
+function buildDictionary(config, {wrapper}) {
 	const StyleDictionary = StyleDictionaryPackage.extend(config);
 	const {
 		fileHeader,
@@ -44,13 +48,13 @@ function buildDictionary(config) {
 			return fileHeader({
 					file
 				}) +
-				':root {\n' +
+				`@mixin theme {\n` +
 				formattedVariables({
 					format: 'css',
 					dictionary,
 					outputReferences
 				}) +
-				'\n}\n';
+				`\n}\n ${wrapper} { @include theme }`;
 		}
 	});
 	StyleDictionary.buildAllPlatforms();

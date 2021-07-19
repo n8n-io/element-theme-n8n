@@ -1,9 +1,9 @@
 /**
  * Do not edit directly
- * Generated on Mon, 19 Jul 2021 18:23:39 GMT
+ * Generated on Mon, 19 Jul 2021 21:22:18 GMT
  */
 
-:root {
+@mixin theme {
   --color-primary-h: 7;
   --color-primary-s: 100%;
   --color-primary-l: 68%;
@@ -89,3 +89,4 @@
   --color-background-xlight-l:  19%;
   --color-background-xlight: hsl(var(--color-background-xlight-h), var(--color-background-xlight-s), var(--color-background-xlight-l));
 }
+ body.theme-dark { @include theme }
