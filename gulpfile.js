@@ -37,9 +37,12 @@ StyleDictionary.registerFormat({
 			outputReferences
 		} = options;
 		dictionary.allTokens = dictionary.allTokens.reduce((accu, token) => {
-			const value = typeof token.value === 'object' ? token.value.value : token.value;
-			if (token.attributes.category === 'color' && typeof value === 'string' && value.startsWith('hsl(')) {
-				const colors = value.replace('hsl(', '').replace(')', '').split(',');
+			if (token.attributes.ignore) {
+				return accu;
+			}
+
+			if (token.attributes.category === 'color' && typeof token.value === 'string' && token.value.startsWith('hsl(')) {
+				const colors = token.value.replace('hsl(', '').replace(')', '').split(',');
 				const parts = ['h', 's', 'l'];
 				colors.map((v, i) => {
 					accu.push({
@@ -53,6 +56,26 @@ StyleDictionary.registerFormat({
 					...token,
 					value: `hsl(var(--${token.name}-h), var(--${token.name}-s), var(--${token.name}-l))`
 				});
+
+				if (token.tint && Array.isArray(token.tint)) {
+					token.tint.forEach((tint, i) => {
+						accu.push({
+							...token,
+							name: `${token.name}-tint-${i + 1}`,
+							value: `hsl(var(--${token.name}-h), var(--${token.name}-s), ${tint}%)`
+						});
+					});
+				}
+
+				if (token.shade && Array.isArray(token.shade)) {
+					token.shade.forEach((shade, i) => {
+						accu.push({
+							...token,
+							name: `${token.name}-shade-${i + 1}`,
+							value: `hsl(var(--${token.name}-h), var(--${token.name}-s), ${shade}%)`
+						});
+					});
+				}
 
 				return accu;
 			}

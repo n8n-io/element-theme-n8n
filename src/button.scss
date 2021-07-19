@@ -42,15 +42,15 @@
 
   &:active {
     color: function.saturation(
-      --color-primary-base-h,
-      --color-primary-base-s,
-      --color-primary-base-l,
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
       -(var.$button-active-shade-percent)
     );
     border-color: function.saturation(
-      --color-primary-base-h,
-      --color-primary-base-s,
-      --color-primary-base-l,
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
       -(var.$button-active-shade-percent)
     );
     outline: none;
@@ -77,15 +77,15 @@
     &:active {
       background: var.$color-white;
       border-color: function.saturation(
-        --color-primary-base-h,
-        --color-primary-base-s,
-        --color-primary-base-l,
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
         -(var.$button-active-shade-percent)
       );
       color: function.saturation(
-        --color-primary-base-h,
-        --color-primary-base-s,
-        --color-primary-base-l,
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
         -(var.$button-active-shade-percent)
       );
       outline: none;
@@ -94,15 +94,15 @@
 
   @include mixins.when(active) {
     color: function.saturation(
-      --color-primary-base-h,
-      --color-primary-base-s,
-      --color-primary-base-l,
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
       -(var.$button-active-shade-percent)
     );
     border-color: function.saturation(
-      --color-primary-base-h,
-      --color-primary-base-s,
-      --color-primary-base-l,
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l,
       -(var.$button-active-shade-percent)
     );
   }
@@ -162,9 +162,9 @@
       var.$button-primary-font-color,
       var.$button-primary-background-color,
       var.$button-primary-border-color,
-      --color-primary-base-h,
-      --color-primary-base-s,
-      --color-primary-base-l
+      --color-primary-h,
+      --color-primary-s,
+      --color-primary-l
     );
   }
   @include mixins.m(success) {
@@ -172,9 +172,9 @@
       var.$button-success-font-color,
       var.$button-success-background-color,
       var.$button-success-border-color,
-      --color-success-base-h,
-      --color-success-base-s,
-      --color-success-base-l
+      --color-success-h,
+      --color-success-s,
+      --color-success-l
     );
   }
   @include mixins.m(warning) {
@@ -182,9 +182,9 @@
       var.$button-warning-font-color,
       var.$button-warning-background-color,
       var.$button-warning-border-color,
-      --color-warning-base-h,
-      --color-warning-base-s,
-      --color-warning-base-l
+      --color-warning-h,
+      --color-warning-s,
+      --color-warning-l
     );
   }
   @include mixins.m(danger) {
@@ -192,9 +192,9 @@
       var.$button-danger-font-color,
       var.$button-danger-background-color,
       var.$button-danger-border-color,
-      --color-danger-base-h,
-      --color-danger-base-s,
-      --color-danger-base-l
+      --color-danger-h,
+      --color-danger-s,
+      --color-danger-l
     );
   }
   @include mixins.m(info) {
@@ -202,9 +202,9 @@
       var.$button-info-font-color,
       var.$button-info-background-color,
       var.$button-info-border-color,
-      --color-info-base-h,
-      --color-info-base-s,
-      --color-info-base-l
+      --color-info-h,
+      --color-info-s,
+      --color-info-l
     );
   }
   @include mixins.m(medium) {
@@ -250,9 +250,9 @@
     &:hover,
     &:focus {
       color: function.lightness(
-        --color-primary-base-h,
-        --color-primary-base-s,
-        --color-primary-base-l,
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
         var.$button-hover-tint-percent
       );
       border-color: transparent;
@@ -260,9 +260,9 @@
     }
     &:active {
       color: function.saturation(
-        --color-primary-base-h,
-        --color-primary-base-s,
-        --color-primary-base-l,
+        --color-primary-h,
+        --color-primary-s,
+        --color-primary-l,
         -(var.$button-active-shade-percent)
       );
       border-color: transparent;

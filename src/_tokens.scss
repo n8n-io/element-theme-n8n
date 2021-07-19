@@ -1,17 +1,17 @@
 /**
  * Do not edit directly
- * Generated on Mon, 19 Jul 2021 11:27:56 GMT
+ * Generated on Mon, 19 Jul 2021 15:13:39 GMT
  */
 
 :root {
-  --color-base-white-h: 0;
-  --color-base-white-s:  0%;
-  --color-base-white-l:  100%;
-  --color-base-white: hsl(var(--color-base-white-h), var(--color-base-white-s), var(--color-base-white-l));
   --color-primary-h: 7;
   --color-primary-s: 100%;
   --color-primary-l: 68%;
   --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+  --color-primary-tint-1: hsl(var(--color-primary-h), var(--color-primary-s), 82%);
+  --color-primary-tint-2: hsl(var(--color-primary-h), var(--color-primary-s), 91%);
+  --color-primary-tint-3: hsl(var(--color-primary-h), var(--color-primary-s), 97%);
+  --color-primary-shade-1: hsl(var(--color-primary-h), var(--color-primary-s), 11%);
   --color-secondary-h: 247;
   --color-secondary-s:  100%;
   --color-secondary-l:  65%;
@@ -20,18 +20,26 @@
   --color-success-s: 74%;
   --color-success-l: 40%;
   --color-success: hsl(var(--color-success-h), var(--color-success-s), var(--color-success-l));
+  --color-success-tint-1: hsl(var(--color-success-h), var(--color-success-s), 88%);
+  --color-success-tint-2: hsl(var(--color-success-h), var(--color-success-s), 97%);
   --color-warning-h: 36;
   --color-warning-s: 77%;
   --color-warning-l: 57%;
   --color-warning: hsl(var(--color-warning-h), var(--color-warning-s), var(--color-warning-l));
+  --color-warning-tint-1: hsl(var(--color-warning-h), var(--color-warning-s), 88%);
+  --color-warning-tint-2: hsl(var(--color-warning-h), var(--color-warning-s), 96%);
   --color-danger-h: 0;
   --color-danger-s: 88%;
   --color-danger-l: 65%;
   --color-danger: hsl(var(--color-danger-h), var(--color-danger-s), var(--color-danger-l));
+  --color-danger-tint-1: hsl(var(--color-danger-h), var(--color-danger-s), 92%);
+  --color-danger-tint-2: hsl(var(--color-danger-h), var(--color-danger-s), 97%);
   --color-info-h: 220;
   --color-info-s: 4%;
   --color-info-l: 58%;
   --color-info: hsl(var(--color-info-h), var(--color-info-s), var(--color-info-l));
+  --color-info-tint-1: hsl(var(--color-info-h), var(--color-info-s), 88%);
+  --color-info-tint-2: hsl(var(--color-info-h), var(--color-info-s), 96%);
   --color-text-dark-h: 0;
   --color-text-dark-s:  0%;
   --color-text-dark-l:  33%;
@@ -41,8 +49,8 @@
   --color-text-base-l:  51%;
   --color-text-base: hsl(var(--color-text-base-h), var(--color-text-base-s), var(--color-text-base-l));
   --color-text-light-h: 220;
-  --color-text-light-s:  4%;
-  --color-text-light-l:  58%;
+  --color-text-light-s: 4%;
+  --color-text-light-l: 58%;
   --color-text-light: hsl(var(--color-text-light-h), var(--color-text-light-s), var(--color-text-light-l));
   --color-text-lighter-h: 222;
   --color-text-lighter-s:  17%;
