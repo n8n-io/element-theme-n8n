@@ -4,98 +4,7 @@ const gulp = require('gulp');
 const sass = require('gulp-dart-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-
-const StyleDictionary = require('style-dictionary')
-	.extend({
-		source: ['src/tokens/**/*.json'],
-		platforms: {
-			scss: {
-				transforms: ["attribute/cti", "name/cti/kebab", "size/rem"],
-				buildPath: 'src/',
-				files: [{
-					destination: '_tokens.scss',
-					format: 'css/custom'
-				}]
-			}
-		}
-	});
-
-
-const {
-	fileHeader,
-	formattedVariables
-} = StyleDictionary.formatHelpers;
-
-StyleDictionary.registerFormat({
-	name: 'css/custom',
-	formatter: function ({
-		dictionary,
-		file,
-		options
-	}) {
-		const {
-			outputReferences
-		} = options;
-		dictionary.allTokens = dictionary.allTokens.reduce((accu, token) => {
-			if (token.attributes.ignore) {
-				return accu;
-			}
-
-			if (token.attributes.category === 'color' && typeof token.value === 'string' && token.value.startsWith('hsl(')) {
-				const colors = token.value.replace('hsl(', '').replace(')', '').split(',');
-				const parts = ['h', 's', 'l'];
-				colors.map((v, i) => {
-					accu.push({
-						...token,
-						value: v,
-						name: `${token.name}-${parts[i]}`,
-					});
-				});
-
-				accu.push({
-					...token,
-					value: `hsl(var(--${token.name}-h), var(--${token.name}-s), var(--${token.name}-l))`
-				});
-
-				if (token.tint && Array.isArray(token.tint)) {
-					token.tint.forEach((tint, i) => {
-						accu.push({
-							...token,
-							name: `${token.name}-tint-${i + 1}`,
-							value: `hsl(var(--${token.name}-h), var(--${token.name}-s), ${tint}%)`
-						});
-					});
-				}
-
-				if (token.shade && Array.isArray(token.shade)) {
-					token.shade.forEach((shade, i) => {
-						accu.push({
-							...token,
-							name: `${token.name}-shade-${i + 1}`,
-							value: `hsl(var(--${token.name}-h), var(--${token.name}-s), ${shade}%)`
-						});
-					});
-				}
-
-				return accu;
-			}
-
-			accu.push(token);
-			return accu;
-		}, []);
-		
-		return fileHeader({
-				file
-			}) +
-			':root {\n' +
-			formattedVariables({
-				format: 'css',
-				dictionary,
-				outputReferences
-			}) +
-			'\n}\n';
-	}
-});
+const styleDictionary = require('./style-dictionary');
 
 function compile() {
 	return gulp.src('./src/*.scss')
@@ -109,7 +18,7 @@ function compile() {
 }
 
 function compileTokens(done) {
-	StyleDictionary.buildAllPlatforms();
+	styleDictionary.buildAllPlatforms();
 	done();
 };
 
