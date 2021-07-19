@@ -18,7 +18,7 @@ $color-transition-base: color .2s cubic-bezier(.645,.045,.355,1) !default;
 /* Color
 -------------------------- */
 /// color|1|Brand Color|0
-$color-primary: var(--color-primary-base) !default;
+$color-primary: var(--color-primary) !default;
 /// color|1|Background Color|4
 $color-white: #FFFFFF !default;
 /// color|1|Background Color|4
@@ -34,7 +34,7 @@ $color-primary-light-7: function.lightness(--color-primary-base-h, --color-prima
 $color-primary-light-8: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 32%) !default;
 $color-primary-light-9: function.lightness(--color-primary-base-h, --color-primary-base-s, --color-primary-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-success: var(--color-success-base) !default;
+$color-success: var(--color-success) !default;
 
 $color-success-light-1: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 4%) !default;
 $color-success-light-2: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 8%) !default;
@@ -46,7 +46,7 @@ $color-success-light-7: function.lightness(--color-success-base-h, --color-succe
 $color-success-light-8: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 32%) !default;
 $color-success-light-9: function.lightness(--color-success-base-h, --color-success-base-s, --color-success-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-warning: var(--color-warning-base) !default;
+$color-warning: var(--color-warning) !default;
 
 $color-warning-light-1: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 4%) !default;
 $color-warning-light-2: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 8%) !default;
@@ -58,7 +58,7 @@ $color-warning-light-7: function.lightness(--color-warning-base-h, --color-warni
 $color-warning-light-8: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 32%) !default;
 $color-warning-light-9: function.lightness(--color-warning-base-h, --color-warning-base-s, --color-warning-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-danger: var(--color-danger-base) !default;
+$color-danger: var(--color-danger) !default;
 
 $color-danger-light-1: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 4%) !default;
 $color-danger-light-2: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 8%) !default;
@@ -70,7 +70,7 @@ $color-danger-light-7: function.lightness(--color-danger-base-h, --color-danger-
 $color-danger-light-8: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 32%) !default;
 $color-danger-light-9: function.lightness(--color-danger-base-h, --color-danger-base-s, --color-danger-base-l, 36%) !default;
 /// color|1|Functional Color|1
-$color-info: var(--color-info-base) !default;
+$color-info: var(--color-info) !default;
 
 $color-info-light-1: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 4%) !default;
 $color-info-light-2: function.lightness(--color-info-base-h, --color-info-base-s, --color-info-base-l, 8%) !default;
@@ -103,13 +103,13 @@ $color-text-secondary: var(--color-text-light) !default;
 /// color|1|Font Color|2
 $color-text-placeholder: var(--color-text-lighter) !default;
 /// color|1|Border Color|3
-$border-color-base: var(--color-border-base) !default;
+$border-color-base: var(--color-foreground-base) !default;
 /// color|1|Border Color|3
-$border-color-light: var(--color-border-light) !default;
+$border-color-light: var(--color-foreground-base) !default;
 /// color|1|Border Color|3
-$border-color-lighter: var(--color-border-lighter) !default;
+$border-color-lighter: var(--color-foreground-light) !default;
 /// color|1|Border Color|3
-$border-color-xlight: var(--color-border-xlight) !default;
+$border-color-xlight: var(--color-foreground-light) !default;
 
 // Background
 /// color|1|Background Color|4

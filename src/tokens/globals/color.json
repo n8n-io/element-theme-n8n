@@ -6,58 +6,22 @@
 			}
 		},
 		"primary": {
-			"dark": {
-				"value": "hsl(7, 49%, 18%)"
-			},
-			"base": {
-				"value": "hsl(7,100%,68%)"
-			},
-			"light": {
-				"value": "hsl(11, 100%, 88%)"
-			},
-			"lighter": {
-				"value": "hsl(11, 100%, 95%)"
-			},
-			"xlight": {
-				"value": "hsl(4, 100%, 97%)"
-			}
+			"value": "hsl(7,100%,68%)"
 		},
 		"secondary": {
-			"base": {
-				"value": "hsl(247, 100%, 65%)"
-			}
+			"value": "hsl(247, 100%, 65%)"
 		},
 		"success": {
-			"base": {
-				"value": "hsl(150,74%,40%)"
-			},
-			"light": {
-				"value": "hsl(100, 53%, 90%)"
-			},
-			"lighter": {
-				"value": "hsl(99, 54%, 95%)"
-			}
+			"value": "hsl(150,74%,40%)"
 		},
 		"warning": {
-			"base": {
-				"value": "hsl(36,77%,57%)"
-			}
+			"value": "hsl(36,77%,57%)"
 		},
 		"danger": {
-			"base": {
-				"value": "hsl(0,88%,65%)"
-			},
-			"light": {
-				"value": "hsl(0, 87%, 94%)"
-			},
-			"lighter": {
-				"value": "hsl(0, 88%, 97%)"
-			}
+			"value": "hsl(0,88%,65%)"
 		},
 		"info": {
-			"base": {
-				"value": "hsl(220,4%,58%)"
-			}
+			"value": "hsl(220,4%,58%)"
 		},
 		"text": {
 			"dark": {
@@ -76,18 +40,12 @@
 				"value": "{color.base.white}"
 			}
 		},
-		"border": {
+		"foreground": {
 			"base": {
-				"value": "hsl(222, 17%, 88%)"
-			},
-			"light": {
 				"value": "hsl(220, 20%, 88%)"
 			},
-			"lighter": {
+			"light": {
 				"value": "hsl(0, 0%, 93%)"
-			},
-			"xlight": {
-				"value": "hsl(216, 63%, 97%)"
 			}
 		},
 		"background": {
