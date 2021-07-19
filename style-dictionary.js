@@ -1,58 +1,94 @@
-const StyleDictionary = require('style-dictionary')
-	.extend({
-		source: ['src/tokens/**/*.json'],
+const StyleDictionaryPackage = require('style-dictionary');
+const TRANSFORMS = ["attribute/cti", "name/cti/kebab", "size/rem"];
+const CUSTOM_FORMAT = 'css/custom';
+const THEMES = ['dark'];
+
+const build = () => {
+	buildDictionary(getGlobalConfig());
+
+	THEMES.forEach((theme) => {
+		buildDictionary(getThemeConfig(theme));
+	});
+};
+
+function buildDictionary(config) {
+	const StyleDictionary = StyleDictionaryPackage.extend(config);
+	const {
+		fileHeader,
+		formattedVariables
+	} = StyleDictionary.formatHelpers;
+
+	StyleDictionary.registerFormat({
+		name: CUSTOM_FORMAT,
+		formatter: function ({
+			dictionary,
+			file,
+			options
+		}) {
+			const {
+				outputReferences
+			} = options;
+			dictionary.allTokens = dictionary.allTokens.reduce((accu, token) => {
+				if (token.attributes.ignore) {
+					return accu;
+				}
+
+				if (isHSLColorToken(token)) {
+					return accu.concat(getColorTokens(token));
+				}
+
+				accu.push(token);
+				return accu;
+			}, []);
+			
+			return fileHeader({
+					file
+				}) +
+				':root {\n' +
+				formattedVariables({
+					format: 'css',
+					dictionary,
+					outputReferences
+				}) +
+				'\n}\n';
+		}
+	});
+	StyleDictionary.buildAllPlatforms();
+}
+
+
+function getGlobalConfig() {
+	return {
+		source: ['src/tokens/base/*.json', 'src/tokens/globals/*.json'],
 		platforms: {
 			scss: {
-				transforms: ["attribute/cti", "name/cti/kebab", "size/rem"],
+				transforms: TRANSFORMS,
 				buildPath: 'src/',
 				files: [{
 					destination: '_tokens.scss',
-					format: 'css/custom'
+					format:CUSTOM_FORMAT 
 				}]
 			}
 		}
-	});
-
-const {
-	fileHeader,
-	formattedVariables
-} = StyleDictionary.formatHelpers;
-
-StyleDictionary.registerFormat({
-	name: 'css/custom',
-	formatter: function ({
-		dictionary,
-		file,
-		options
-	}) {
-		const {
-			outputReferences
-		} = options;
-		dictionary.allTokens = dictionary.allTokens.reduce((accu, token) => {
-			if (token.attributes.ignore) {
-				return accu;
-			}
-
-			if (isHSLColorToken(token)) {
-				return accu.concat(getColorTokens(token));
-			}
-
-			accu.push(token);
-			return accu;
-		}, []);
-		
-		return fileHeader({
-				file
-			}) +
-			':root {\n' +
-			formattedVariables({
-				format: 'css',
-				dictionary,
-				outputReferences
-			}) +
-			'\n}\n';
 	}
-});
+}
+
+function getThemeConfig(theme) {
+	return {
+		source: ['src/tokens/base/*.json', `src/tokens/themes/${theme}/*.json`],
+		platforms: {
+			scss: {
+				transforms: TRANSFORMS,
+				buildPath: 'src/',
+				files: [{
+					destination: `_tokens.${theme}.scss`,
+					format:CUSTOM_FORMAT 
+				}]
+			}
+		}
+	}
+}
+
 
 function isHSLColorToken(token) {
 	return token.attributes.category === 'color' && typeof token.value === 'string' && token.value.startsWith('hsl(');
@@ -98,4 +134,6 @@ function getColorTokens(token) {
 	return res;
 }
 
-module.exports = StyleDictionary;
+module.exports = {
+	build
+};

@@ -4,7 +4,7 @@ const gulp = require('gulp');
 const sass = require('gulp-dart-sass');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const styleDictionary = require('./style-dictionary');
+const StyleDictionary = require('./style-dictionary');
 
 function compile() {
 	return gulp.src('./src/*.scss')
@@ -18,7 +18,7 @@ function compile() {
 }
 
 function compileTokens(done) {
-	styleDictionary.buildAllPlatforms();
+	StyleDictionary.build();
 	done();
 };
 
