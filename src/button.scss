@@ -33,12 +33,14 @@
     var.$button-border-radius
   );
 
+  /**
   &:hover,
   &:focus {
     color: var.$color-primary;
     border-color: var.$color-primary-light-7;
     background-color: var.$color-primary-light-9;
   }
+  **/
 
   &:active {
     color: function.saturation(
