@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 20 Jul 2021 20:18:17 GMT
+ * Generated on Tue, 20 Jul 2021 20:41:13 GMT
  */
 
 @mixin theme {
@@ -88,13 +88,6 @@
   --color-background-xlight-s:  0%;
   --color-background-xlight-l:  100%;
   --color-background-xlight: hsl(var(--color-background-xlight-h), var(--color-background-xlight-s), var(--color-background-xlight-l));
-  --font-weight-thin: 100;
-  --font-weight-extra-light: 200;
-  --font-weight-light: 300;
-  --font-weight-normal: 400;
-  --font-weight-semi-bold: 600;
-  --font-weight-bold: 700;
-  --font-weight-extra-bold: 900;
   --font-size-2xs: 0.75rem;
   --font-size-xs: 0.8125rem;
   --font-size-s: 0.875rem;
