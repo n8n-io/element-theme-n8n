@@ -1,5 +1,6 @@
 const StyleDictionaryPackage = require('style-dictionary');
-const TRANSFORMS = ["attribute/cti", "name/cti/kebab", "size/rem"];
+const CUSTOM_SIZE_TRANSFORM = 'size/transform';
+const TRANSFORMS = ["attribute/cti", "name/cti/kebab", CUSTOM_SIZE_TRANSFORM];
 const CUSTOM_FORMAT = 'css/custom';
 const THEMES = ['dark'];
 
@@ -21,6 +22,16 @@ function buildDictionary(config, {wrapper}) {
 		fileHeader,
 		formattedVariables
 	} = StyleDictionary.formatHelpers;
+
+	StyleDictionary.registerTransform({
+		name: CUSTOM_SIZE_TRANSFORM,
+		type: 'value',
+		matcher: (token) => ['spacing'].includes(token.attributes.category) || ['size'].includes(token.attributes.type),
+		transformer: function(token) {
+		  const val = parseFloat(token.value);
+		  return val + 'rem';
+		}
+	});
 
 	StyleDictionary.registerFormat({
 		name: CUSTOM_FORMAT,

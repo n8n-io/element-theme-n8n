@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 20 Jul 2021 19:06:49 GMT
+ * Generated on Tue, 20 Jul 2021 20:18:17 GMT
  */
 
 @mixin theme {
@@ -95,22 +95,22 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
   --font-weight-extra-bold: 900;
-  --size-spacing-3xs: 0.125rem;
-  --size-spacing-2xs: 0.25rem;
-  --size-spacing-xs: 0.5rem;
-  --size-spacing-s: 1rem;
-  --size-spacing-m: 1.5rem;
-  --size-spacing-l: 2rem;
-  --size-spacing-xl: 3rem;
-  --size-spacing-2xl: 4rem;
-  --size-spacing-3xl: 8rem;
-  --size-spacing-4xl: 16rem;
-  --size-font-2xs: 0.75rem;
-  --size-font-xs: 0.8125rem;
-  --size-font-s: 0.875rem;
-  --size-font-m: 1rem;
-  --size-font-l: 1.125rem;
-  --size-font-xl: 1.25rem;
-  --size-font-2xl: 1.75rem;
+  --font-size-2xs: 0.75rem;
+  --font-size-xs: 0.8125rem;
+  --font-size-s: 0.875rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.75rem;
+  --spacing-3xs: 0.125rem;
+  --spacing-2xs: 0.25rem;
+  --spacing-xs: 0.5rem;
+  --spacing-s: 1rem;
+  --spacing-m: 1.5rem;
+  --spacing-l: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  --spacing-3xl: 8rem;
+  --spacing-4xl: 16rem;
 }
  :root { @include theme }
