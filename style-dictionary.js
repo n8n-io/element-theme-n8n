@@ -28,8 +28,7 @@ function buildDictionary(config, {wrapper}) {
 		type: 'value',
 		matcher: (token) => ['spacing'].includes(token.attributes.category) || ['size'].includes(token.attributes.type),
 		transformer: function(token) {
-		  const val = parseFloat(token.value);
-		  return val + 'rem';
+		  return token.value + 'rem';
 		}
 	});
 
@@ -126,22 +125,34 @@ function getColorTokens(token) {
 		value: `hsl(var(--${token.name}-h), var(--${token.name}-s), var(--${token.name}-l))`
 	});
 
-	if (token.tint && Array.isArray(token.tint)) {
-		token.tint.forEach((tint, i) => {
+	if (token.tint) {
+		Object.keys(token.tint).forEach((i) => {
 			res.push({
 				...token,
-				name: `${token.name}-tint-${i + 1}`,
-				value: `hsl(var(--${token.name}-h), var(--${token.name}-s), ${tint}%)`
+				name: `${token.name}-tint-${i}-l`,
+				value: `${token.tint[i]}%`
+			});
+
+			res.push({
+				...token,
+				name: `${token.name}-tint-${i}`,
+				value: `hsl(var(--${token.name}-h), var(--${token.name}-s), var(--${token.name}-tint-${i}-l))`
 			});
 		});
 	}
 
-	if (token.shade && Array.isArray(token.shade)) {
-		token.shade.forEach((shade, i) => {
+	if (token.shade) {
+		Object.keys(token.shade).forEach((i) => {
 			res.push({
 				...token,
-				name: `${token.name}-shade-${i + 1}`,
-				value: `hsl(var(--${token.name}-h), var(--${token.name}-s), ${shade}%)`
+				name: `${token.name}-shade-${i}-l`,
+				value: `${token.shade[i]}%`
+			});
+
+			res.push({
+				...token,
+				name: `${token.name}-shade-${i}`,
+				value: `hsl(var(--${token.name}-h), var(--${token.name}-s), var(--${token.name}-shade-${i}-l))`
 			});
 		});
 	}

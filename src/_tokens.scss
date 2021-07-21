@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 20 Jul 2021 21:16:08 GMT
+ * Generated on Wed, 21 Jul 2021 15:02:38 GMT
  */
 
 @mixin theme {
@@ -8,10 +8,14 @@
   --color-primary-s: 100%;
   --color-primary-l: 68%;
   --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
-  --color-primary-tint-1: hsl(var(--color-primary-h), var(--color-primary-s), 82%);
-  --color-primary-tint-2: hsl(var(--color-primary-h), var(--color-primary-s), 91%);
-  --color-primary-tint-3: hsl(var(--color-primary-h), var(--color-primary-s), 97%);
-  --color-primary-shade-1: hsl(var(--color-primary-h), var(--color-primary-s), 11%);
+  --color-primary-tint-1-l: 82%;
+  --color-primary-tint-1: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-tint-1-l));
+  --color-primary-tint-2-l: 91%;
+  --color-primary-tint-2: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-tint-2-l));
+  --color-primary-tint-3-l: 97%;
+  --color-primary-tint-3: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-tint-3-l));
+  --color-primary-shade-1-l: 11%;
+  --color-primary-shade-1: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-shade-1-l));
   --color-secondary-h: 247;
   --color-secondary-s:  100%;
   --color-secondary-l:  65%;
@@ -20,26 +24,34 @@
   --color-success-s: 74%;
   --color-success-l: 40%;
   --color-success: hsl(var(--color-success-h), var(--color-success-s), var(--color-success-l));
-  --color-success-tint-1: hsl(var(--color-success-h), var(--color-success-s), 88%);
-  --color-success-tint-2: hsl(var(--color-success-h), var(--color-success-s), 97%);
+  --color-success-tint-1-l: 88%;
+  --color-success-tint-1: hsl(var(--color-success-h), var(--color-success-s), var(--color-success-tint-1-l));
+  --color-success-tint-2-l: 97%;
+  --color-success-tint-2: hsl(var(--color-success-h), var(--color-success-s), var(--color-success-tint-2-l));
   --color-warning-h: 36;
   --color-warning-s: 77%;
   --color-warning-l: 57%;
   --color-warning: hsl(var(--color-warning-h), var(--color-warning-s), var(--color-warning-l));
-  --color-warning-tint-1: hsl(var(--color-warning-h), var(--color-warning-s), 88%);
-  --color-warning-tint-2: hsl(var(--color-warning-h), var(--color-warning-s), 96%);
+  --color-warning-tint-1-l: 88%;
+  --color-warning-tint-1: hsl(var(--color-warning-h), var(--color-warning-s), var(--color-warning-tint-1-l));
+  --color-warning-tint-2-l: 96%;
+  --color-warning-tint-2: hsl(var(--color-warning-h), var(--color-warning-s), var(--color-warning-tint-2-l));
   --color-danger-h: 0;
   --color-danger-s: 88%;
   --color-danger-l: 65%;
   --color-danger: hsl(var(--color-danger-h), var(--color-danger-s), var(--color-danger-l));
-  --color-danger-tint-1: hsl(var(--color-danger-h), var(--color-danger-s), 92%);
-  --color-danger-tint-2: hsl(var(--color-danger-h), var(--color-danger-s), 97%);
+  --color-danger-tint-1-l: 92%;
+  --color-danger-tint-1: hsl(var(--color-danger-h), var(--color-danger-s), var(--color-danger-tint-1-l));
+  --color-danger-tint-2-l: 97%;
+  --color-danger-tint-2: hsl(var(--color-danger-h), var(--color-danger-s), var(--color-danger-tint-2-l));
   --color-info-h: 220;
   --color-info-s: 4%;
   --color-info-l: 58%;
   --color-info: hsl(var(--color-info-h), var(--color-info-s), var(--color-info-l));
-  --color-info-tint-1: hsl(var(--color-info-h), var(--color-info-s), 88%);
-  --color-info-tint-2: hsl(var(--color-info-h), var(--color-info-s), 96%);
+  --color-info-tint-1-l: 88%;
+  --color-info-tint-1: hsl(var(--color-info-h), var(--color-info-s), var(--color-info-tint-1-l));
+  --color-info-tint-2-l: 96%;
+  --color-info-tint-2: hsl(var(--color-info-h), var(--color-info-s), var(--color-info-tint-2-l));
   --color-text-dark-h: 0;
   --color-text-dark-s:  0%;
   --color-text-dark-l:  33%;
@@ -99,6 +111,8 @@
   --font-line-height-regular: 1.3;
   --font-line-height-loose: 1.35;
   --font-line-height-xloose: 1.5;
+  --font-weight-regular: 400;
+  --font-weight-bold: 600;
   --spacing-3xs: 0.125rem;
   --spacing-2xs: 0.25rem;
   --spacing-xs: 0.5rem;

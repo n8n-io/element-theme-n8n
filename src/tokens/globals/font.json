@@ -36,6 +36,14 @@
 			"xloose": {
 				"value": 1.5
 			}
+		},
+		"weight": {
+			"regular": {
+				"value": 400
+			},
+			"bold": {
+				"value": 600
+			}
 		}
 	}
 }
