@@ -64,7 +64,7 @@ function buildDictionary(config, {wrapper}) {
 					dictionary,
 					outputReferences
 				}) +
-				`\n}\n ${wrapper} { @include theme }`;
+				`\n}\n\n${wrapper} { @include theme }`;
 		}
 	});
 	StyleDictionary.buildAllPlatforms();

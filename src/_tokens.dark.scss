@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Wed, 21 Jul 2021 15:02:38 GMT
+ * Generated on Wed, 21 Jul 2021 20:17:37 GMT
  */
 
 @mixin theme {
@@ -54,7 +54,7 @@
   --color-info-tint-2: hsl(var(--color-info-h), var(--color-info-s), var(--color-info-tint-2-l));
   --color-text-dark-h: 0;
   --color-text-dark-s:  0%;
-  --color-text-dark-l:  67%;
+  --color-text-dark-l:  100%;
   --color-text-dark: hsl(var(--color-text-dark-h), var(--color-text-dark-s), var(--color-text-dark-l));
   --color-text-base-h: 240;
   --color-text-base-s:  4%;
@@ -101,4 +101,5 @@
   --color-background-xlight-l:  19%;
   --color-background-xlight: hsl(var(--color-background-xlight-h), var(--color-background-xlight-s), var(--color-background-xlight-l));
 }
- body.theme-dark { @include theme }
+
+body.theme-dark { @include theme }

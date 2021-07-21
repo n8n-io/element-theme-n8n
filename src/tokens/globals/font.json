@@ -44,6 +44,9 @@
 			"bold": {
 				"value": 600
 			}
+		},
+		"family": {
+			"value": "'Open Sans',sans-serif"
 		}
 	}
 }

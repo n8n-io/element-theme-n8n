@@ -44,7 +44,7 @@
 		},
 		"text": {
 			"dark": {
-				"value": "hsl(0, 0%, 33%)"
+				"value": "hsl(0, 0%, 33.5%)"
 			},
 			"base": {
 				"value": "hsl(240, 4%, 51%)"
