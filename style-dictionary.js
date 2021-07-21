@@ -4,7 +4,7 @@ const TRANSFORMS = ["attribute/cti", "name/cti/kebab", CUSTOM_SIZE_TRANSFORM];
 const CUSTOM_FORMAT = 'css/custom';
 const THEMES = ['dark'];
 
-const build = (source = []) => {
+const build = (source) => {
 	buildDictionary(getGlobalConfig(source), {
 		wrapper: ':root'
 	});
@@ -71,9 +71,9 @@ function buildDictionary(config, {wrapper}) {
 }
 
 
-function getGlobalConfig(source = []) {
+function getGlobalConfig(source) {
 	return {
-		source: ['src/tokens/base/*.json', 'src/tokens/globals/*.json', ...source],
+		source: source ? source : ['src/tokens/base/*.json', 'src/tokens/globals/*.json'],
 		platforms: {
 			scss: {
 				transforms: TRANSFORMS,
@@ -89,7 +89,7 @@ function getGlobalConfig(source = []) {
 
 function getThemeConfig(theme, source) {
 	return {
-		source: ['src/tokens/base/*.json', `src/tokens/themes/${theme}/*.json`, ...source],
+		source: source ? source : ['src/tokens/base/*.json', `src/tokens/themes/${theme}/*.json`],
 		platforms: {
 			scss: {
 				transforms: TRANSFORMS,
