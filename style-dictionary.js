@@ -4,13 +4,14 @@ const TRANSFORMS = ["attribute/cti", "name/cti/kebab", CUSTOM_SIZE_TRANSFORM];
 const CUSTOM_FORMAT = 'css/custom';
 const THEMES = ['dark'];
 
-const build = (source, buildPath) => {
-	buildDictionary(getGlobalConfig(source, buildPath), {
+const build = (config) => {
+	buildDictionary(getGlobalConfig(config), {
 		wrapper: ':root'
 	});
 
-	THEMES.forEach((theme) => {
-		buildDictionary(getThemeConfig(theme, source, buildPath), {
+	const themes = config.themes ? config.themes : [];
+	themes.forEach((theme) => {
+		buildDictionary(getThemeConfig(theme, config), {
 			wrapper: `body.theme-${theme}`
 		});
 	});
@@ -71,29 +72,29 @@ function buildDictionary(config, {wrapper}) {
 }
 
 
-function getGlobalConfig(source, buildPath) {
+function getGlobalConfig({source, buildPath}) {
 	return {
-		source: source ? source : ['src/tokens/base/*.json', 'src/tokens/globals/*.json'],
+		source,
 		platforms: {
 			scss: {
 				transforms: TRANSFORMS,
-				buildPath: buildPath ? buildPath : 'src/',
+				buildPath,
 				files: [{
 					destination: '_tokens.scss',
-					format:CUSTOM_FORMAT 
+					format: CUSTOM_FORMAT 
 				}]
 			}
 		}
 	}
 }
 
-function getThemeConfig(theme, source, buildPath) {
+function getThemeConfig(theme, {themeSource, buildPath}) {
 	return {
-		source: source ? source : ['src/tokens/base/*.json', `src/tokens/themes/${theme}/*.json`],
+		source: themeSource.map(source => source.replace(':theme', theme)),
 		platforms: {
 			scss: {
 				transforms: TRANSFORMS,
-				buildPath: buildPath ? buildPath : 'src/',
+				buildPath,
 				files: [{
 					destination: `_tokens.${theme}.scss`,
 					format:CUSTOM_FORMAT 

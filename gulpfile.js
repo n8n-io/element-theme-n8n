@@ -18,7 +18,12 @@ function compile() {
 }
 
 function compileTokens(done) {
-	StyleDictionary.build();
+	StyleDictionary.build({
+		source: ['src/tokens/base/*.json', 'src/tokens/globals/*.json'],
+		themeSource: ['src/tokens/base/*.json', `src/tokens/themes/:theme/*.json`],
+		themes: ['dark'],
+		buildPath: 'src/',
+	});
 	done();
 };
 
